@@ -9,13 +9,22 @@ from diplomacy import Game
 from diplomacy.utils.export import to_saved_game_format
 from diplomacy.engine.message import Message
 
+
 # --------------------------------------------------------------------------- #
 #  Configuration                                                              #
 # --------------------------------------------------------------------------- #
-OLLAMA_MODEL = "mistral:7b-instruct"     
-OUTPUT_FILE  = Path("test_game.json")
+MODEL_BY_POWER = {
+    "AUSTRIA": "mistral:7b-instruct",
+    "ENGLAND": "llama3",
+    "FRANCE": "qwen2.5:7b-instruct",
+    "GERMANY": "mistral:7b-instruct",
+    "ITALY": "llama3",
+    "RUSSIA": "qwen2.5:7b-instruct",
+    "TURKEY": "mistral:7b-instruct",
+} 
+OUTPUT_FILE  = Path("game_state.json")
 DIALOGUE_FILE = Path("dialogue_log.json")
-MAX_YEAR = 1903
+MAX_YEAR = 1912
 DIALOGUE_LOG: list[dict] = []
 PHASE_MESSAGES = {}
 # Rule‑book appended to every prompt (≈ 140 tokens)
@@ -26,8 +35,9 @@ GENERAL
 • Seven powers (AUS, ENG, FRA, GER, ITA, RUS, TUR) each control Armies (A) and/or Fleets (F).
 • Each unit occupies ONE province (land or sea).  Only one unit may occupy a province at a time.
 • All orders are written in **three‑letter province abbreviations** (e.g., PAR, TYR, NTH).
-• All players write orders simultaneously; adjudication follows standard Diplomacy rules
-  (strength = 1 + number of valid supports, supports can be cut, self‑bounce possible, etc.).
+• All players write orders simultaneously; adjudication follows standard Diplomacy rules.
+• Players may form alliances, propose peace deals, offer support, or deceive and betray one another. Strategic diplomacy is as important as military tactics.
+• There is no obligation to honor agreements. Trust must be earned — or exploited.
 
 ─────────────────────────
 ORDER TYPES & SYNTAX
@@ -88,54 +98,105 @@ NO extra keys, explanation, or text outside the JSON array.
 
 def get_ollama_message(game: Game, power: str) -> str:
     """
-    Ask the LLM to write a diplomatic message (full‑press) for the given power.
+    Ask the LLM to write a diplomatic message (full‑press) for the given power,
+    choosing its own set of recipients.
     """
+    model = MODEL_BY_POWER[power]
     phase = game.get_current_phase()
-    # Collect past messages in this phase
     other_powers = [p for p in game.powers if p != power]
-    recipients_text = ", ".join(other_powers)
-
-    # Build history for this phase
-    history = [
-        f"{m['power']}: {m['message']}" for m in PHASE_MESSAGES.get(phase, [])
-    ]
+    
+    # Build past message history
+    history = [f"{m['power']} → {m['recipients']}: {m['message']}" 
+               for m in PHASE_MESSAGES.get(phase, [])]
 
     prompt = (
+        # ── Enforce non‑empty recipients at the start ──────────────────────
+        f"You are a Diplomacy agent. **Reply in English only.**\n"
+        f"Return only a single JSON object—no extra text.\n"
+        f"SCHEMA:\n"
+        f"  {{\n"
+        f"    \"recipients\": [<one or more powers>],  # REQUIRED, non‑empty array\n"
+        f"    \"message\": \"<your message>\"           # REQUIRED, non‑empty string\n"
+        f"  }}\n"
+        f"You MUST include at least one recipient from this list: {', '.join(other_powers)}.\n"
+        f"Example:\n"
+        f'  {{"recipients": ["FRANCE","ITALY"], "message":"Let us unite to face the Turk."}}\n\n'
+
+        # ── The rest of your context ───────────────────────────────────────
         f"### DIPLOMACY CHAT ###\n"
         f"Phase: {phase}\n"
-        f"You are the official representative of {power}. "
-        f"Write a message addressed to the other powers: {recipients_text}.\n"
-        f"Past messages:\n{json.dumps(history, indent=2)}\n\n"
-        f"You are {power}. Write your next negotiation message (or leave empty if none):"
+        f"You are the official representative of {power}.\n"
+        f"You may send a private message to ONE OR MORE other powers. You are free to negotiate alliances, propose coordinated movements, offer support, or withhold information.\n"
+        f"Your objective is to secure control of Europe — how you achieve that is up to you. Trust, cooperation, deception, and betrayal are all potential tools in your diplomatic arsenal.\n"
+        f"There is no single correct approach — each decision depends on your judgment, relationships, and evolving game state.\n\n"
+
+        # ── Re‑state the requirement ───────────────────────────────────────
+        f"Remember: the 'recipients' array CANNOT be empty. If you have no strong partner, still pick one power at random.\n\n"
+
+        f"Past messages this phase:\n{json.dumps(history, indent=2)}\n\n"
+
+        # ── ***OUTPUT FORMAT FOOTER*** ─────────────────────────────────────
+        f"### OUTPUT FORMAT ###\n"
+        f"• Output **valid JSON only** — no Markdown fences, no surrounding text.\n"
+        f"• The first character must be '{{' and the very last character must be '}}'.\n"
+        f"• After the closing brace, **STOP GENERATING**.\n\n"
+
+        # ── Final cue ──────────────────────────────────────────────────────
+        f"Your reply (JSON only):"
     )
-    proc = subprocess.run(
-        ["ollama", "run", OLLAMA_MODEL, prompt],
-        capture_output=True, text=True
-    )
-    msg = (proc.stdout or proc.stderr).strip()
-    # Record for NLP
-    DIALOGUE_LOG.append({
-        "phase": phase,
-        "power": power,
-        "type": "chat",
-        "prompt": prompt,
-        "response": msg
-    })
+
+
+
+    proc = subprocess.run(["ollama", "run", "--format", "json", model, prompt], capture_output=True, text=True)
+    raw_output = (proc.stdout or proc.stderr).strip()
+
+    match = re.search(r"\{.*?\}", raw_output, re.DOTALL)
+
+    if not match:
+        print(f"[{power}] No valid JSON object found in response.")
+        print(f"[{power}] Raw output:\n{raw_output}\n")
+        return ""
+
+    try:
+        result = json.loads(match.group())
+        recipients = result.get("recipients", [])
+        msg = result.get("message", "").strip()
+    except Exception as e:
+        print(f"[{power}] JSON parse failed: {e}")
+        print(f"[{power}] Raw output:\n{raw_output}\n")
+        return ""
+    
+    if not recipients or not msg:
+        return ""
+
     if phase not in PHASE_MESSAGES:
         PHASE_MESSAGES[phase] = []
     PHASE_MESSAGES[phase].append({
         "power": power,
+        "recipients": recipients,
         "message": msg
     })
 
-    message = Message(
-        sender=power,
-        recipient="GLOBAL",
-        message=msg,
-        phase=phase,
-        time_sent=int(time.time())
-    )
-    game.add_message(message)
+    for rec in recipients:
+        message = Message(
+            sender=power,
+            recipient=rec,
+            message=msg,
+            phase=phase,
+            time_sent=int(time.time())
+        )
+        game.add_message(message)
+
+    # Record for NLP
+    DIALOGUE_LOG.append({
+        "phase": phase,
+        "power": power,
+        "recipients": recipients,
+        "type": "chat",
+        "prompt": prompt,
+        "response": msg
+    })
+
     return msg
 
 
@@ -144,6 +205,7 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
     """
     Ask the LLM for exactly one legal order per unit this power controls.
     """
+    model = MODEL_BY_POWER[power]   
     locs = game.get_orderable_locations(power)
     if not locs:
         return []
@@ -158,7 +220,7 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
         "BEGIN JSON ARRAY NOW:"
     )
     proc = subprocess.run(
-        ["ollama", "run", OLLAMA_MODEL, prompt],
+        ["ollama", "run", model, prompt],
         capture_output=True, text=True
     )
     output = (proc.stdout or proc.stderr).strip()
@@ -204,26 +266,14 @@ def main():
             print(f"Reached {year}; stopping early.")
             break
 
-        # 1) Collect diplomatic messages
         for pw in game.powers:
-            msg = get_ollama_message(game, pw)
-            if msg:
-                # Create message using the Message class
-                message = Message(
-                    sender=pw,
-                    recipient='GLOBAL',
-                    message=msg,
-                    phase=phase,
-                    time_sent=int(time.time())
-                )
-                game.add_message(message)
+            get_ollama_message(game, pw)
 
-        # 2) Collect and set orders
         for pw in game.powers:
             orders = get_ollama_orders(game, pw)
             game.set_orders(pw, orders)
 
-        # 3) Process and record engine messages
+
         phase_data = game.process()
         DIALOGUE_LOG.append({
             "phase": phase_data.name,

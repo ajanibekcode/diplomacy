@@ -3,37 +3,33 @@ from pathlib import Path
 from diplomacy import Game
 
 def render_game_phases(saved_game_path: str, output_dir: str):
-    # 1) Load the saved game
+    # Load the saved game
     with open(saved_game_path, "r") as f:
         saved = json.load(f)
 
-    # 2) Prepare output folder
+    # Create output directory
     out = Path(output_dir)
     out.mkdir(exist_ok=True)
 
-    # 3) Start a fresh Game
+    # Start a fresh game
     game = Game(map_name=saved["map"])
     game.add_rule("PRESS")
 
-    # 4) For each phase in your saved data:
     for idx, phase in enumerate(saved["phases"]):
         phase_name = phase["name"]
         orders = phase.get("orders", {})
 
-        # --- RENDER BEFORE processing orders ---
-        svg = game.render()  
-        svg_path = out / f"{idx:02d}_{phase_name}.svg"
-        svg_path.write_text(svg, encoding="utf-8")
-        print(f"Saved PRE‑{phase_name}: {svg_path}")
-
-        # 5) Now feed in that phase’s orders
+        # Set orders
         for power, unit_orders in orders.items():
             game.set_orders(power, unit_orders)
 
-        # 6) Process to advance to next phase
+        # Render post-orders (with arrows)
+        svg = game.render(incl_orders=True, incl_abbrev=True)
+        with open(out / f"{idx:02d}_{phase_name}.svg", "w") as f:
+            f.write(svg)
+        
         game.process()
 
-    print(f"\n✅ All SVG maps saved to '{output_dir}'")
+    print(f"\nAll SVG maps saved to '{output_dir}'")
 
-
-render_game_phases("test_game.json", "map_images")
+render_game_phases("game_state.json", "map_images")

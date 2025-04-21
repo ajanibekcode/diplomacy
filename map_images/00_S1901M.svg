@@ -363,8 +363,8 @@
 
     <!-- drawing layer: orders -->
     <g id="OrderLayer">
-        <g id="Layer2"/>
-        <g id="Layer1"/>
+        <g id="Layer2"><g><path class="shadowdash" d="M 493.5,534.0 C 508.5,695.0 508.5,695.0 557.75,607.86"/><path class="supportorder" stroke="darkviolet" marker-end="url(#arrow)" d="M 493.5,534.0 C 508.5,695.0 508.5,695.0 557.75,607.86"/></g><g><path class="shadowdash" d="M 424.5,839.0 C 508.5,865.0 508.5,865.0 464.96,909.2"/><path class="supportorder" stroke="royalblue" marker-end="url(#arrow)" d="M 424.5,839.0 C 508.5,865.0 508.5,865.0 464.96,909.2"/></g><g><path class="shadowdash" d="M 544.5,995.0 C 508.5,865.0 508.5,865.0 549.45,880.0"/><path class="supportorder" stroke="royalblue" marker-end="url(#arrow)" d="M 544.5,995.0 C 508.5,865.0 508.5,865.0 549.45,880.0"/></g><g><path class="shadowdash" d="M 1003.5,760.0 C 1220.5,610.0 1220.5,610.0 1155.39,789.91"/><path class="supportorder" stroke="#757d91" marker-end="url(#arrow)" d="M 1003.5,760.0 C 1220.5,610.0 1220.5,610.0 1155.39,789.91"/></g><g stroke="#b9a61c"><line x1="1165.5" y1="1157.0" x2="1241.77" y2="1208.55" class="shadowdash"/><line x1="1165.5" y1="1157.0" x2="1241.77" y2="1208.55" class="supportorder"/><use x="1235.2" y="1191.7" height="76.6" width="76.6" xlink:href="#SupportHoldUnit"/></g></g>
+        <g id="Layer1"><g><line x1="970.5" y1="924.0" x2="904.99" y2="896.42" class="varwidthshadow" stroke-width="10.0"/><line x1="970.5" y1="924.0" x2="904.99" y2="896.42" class="varwidthorder" stroke="#c48f85" stroke-width="6.0" marker-end="url(#arrow)"/></g><g stroke="#c48f85"><use x="812.2" y="982.7" height="66.6" width="66.6" xlink:href="#HoldUnit"/></g><g stroke="royalblue"><use x="475.2" y="831.7" height="66.6" width="66.6" xlink:href="#HoldUnit"/></g><g stroke="#a08a75"><use x="758.2" y="676.7" height="66.6" width="66.6" xlink:href="#HoldUnit"/></g><g><line x1="826.5" y1="1190.0" x2="818.8" y2="1157.16" class="varwidthshadow" stroke-width="10.0"/><line x1="826.5" y1="1190.0" x2="818.8" y2="1157.16" class="varwidthorder" stroke="forestgreen" stroke-width="6.0" marker-end="url(#arrow)"/></g><g stroke="forestgreen"><use x="718.2" y="1088.7" height="66.6" width="66.6" xlink:href="#HoldUnit"/></g><g><line x1="1220.5" y1="610.0" x2="1155.39" y2="789.91" class="varwidthshadow" stroke-width="10.0"/><line x1="1220.5" y1="610.0" x2="1155.39" y2="789.91" class="varwidthorder" stroke="#757d91" stroke-width="6.0" marker-end="url(#arrow)"/></g><g stroke="#757d91"><use x="1271.2" y="831.7" height="66.6" width="66.6" xlink:href="#HoldUnit"/></g><g><line x1="1086.0" y1="507.0" x2="1059.95" y2="558.45" class="varwidthshadow" stroke-width="10.0"/><line x1="1086.0" y1="507.0" x2="1059.95" y2="558.45" class="varwidthorder" stroke="#757d91" stroke-width="6.0" marker-end="url(#arrow)"/></g></g>
     </g>
 
     <!-- drawing layer: units -->
@@ -377,7 +377,84 @@
     <g id="HighestOrderLayer"/>
 
     <!-- Location abbreviations -->
-    
+    <g class="labeltext24" id="BriefLabelLayer">
+        <text x="649.4" y="924.2">SWI</text>
+        <text class="labeltext18" x="849.4" y="1100.6">ADR</text>
+        <text x="1085.7" y="1296.4">AEG</text>
+        <text class="labeltext18" x="932.4" y="1164.4">ALB</text>
+        <text x="1368.8" y="1115.5">ANK</text>
+        <text class="labeltext18" x="832.3" y="1151.7">APU</text>
+        <text x="1603" y="1145.3">ARM</text>
+        <text x="827.2" y="660.2">BAL</text>
+        <text x="1077.8" y="59.3">BAR</text>
+        <text class="labeltext18" x="591.8" y="796.2">BEL</text>
+        <text class="labeltext18" x="760" y="728">BER</text>
+        <text x="1319.8" y="1034.6">BLA</text>
+        <text class="labeltext18" x="800.4" y="855.8">BOH</text>
+        <text class="labeltext18" x="430" y="866.4">BRE</text>
+        <text class="labeltext18" x="953.7" y="964.3">BUD</text>
+        <text class="labeltext18" x="1021.8" y="1109.1">BUL</text>
+        <text class="labeltext18" x="530.1" y="915.4">BUR</text>
+        <text class="labeltext18" x="457.7" y="479">CLY</text>
+        <text x="1202.8" y="1177.2">CON</text>
+        <text x="718.2" y="584.3">DEN</text>
+        <text x="1164.4" y="1343.3">EAS</text>
+        <text class="labeltext18" x="496" y="500.3">EDI</text>
+        <text x="466.2" y="762.6">ENG</text>
+        <text x="1030.3" y="347">FIN</text>
+        <text class="labeltext18" x="940.9" y="840.9">GAL</text>
+        <text class="labeltext18" x="447" y="972.8">GAS</text>
+        <text class="labeltext18" x="981.4" y="1160.2">GRE</text>
+        <text x="929.6" y="538.9">BOT</text>
+        <text x="525.8" y="1107">LYO</text>
+        <text x="654.2" y="665.4">HEL</text>
+        <text class="labeltext18" x="608.8" y="749.3">HOL</text>
+        <text x="894.1" y="1251.7">ION</text>
+        <text x="318" y="711.4">IRI</text>
+        <text class="labeltext18" x="691.9" y="753.6">KIE</text>
+        <text class="labeltext18" x="500.3" y="734.4">LON</text>
+        <text x="1030.3" y="640.8">LVN</text>
+        <text class="labeltext18" x="449.2" y="564.1">LVP</text>
+        <text class="labeltext18" x="572.6" y="962.2">MAR</text>
+        <text x="153.3" y="815.3">MAO</text>
+        <text x="1568.9" y="572.6">MOS</text>
+        <text class="labeltext18" x="681.2" y="872.8">MUN</text>
+        <text x="240.6" y="1317.7">NAF</text>
+        <text class="labeltext18" x="832.3" y="1211.3">NAP</text>
+        <text x="191.6" y="268.2">NAO</text>
+        <text x="595.5" y="512">NTH</text>
+        <text x="760" y="391.7">NWY</text>
+        <text x="664.2" y="161.8">NWG</text>
+        <text class="labeltext18" x="481.1" y="892">PAR</text>
+        <text class="labeltext18" x="489.6" y="802.5">PIC</text>
+        <text class="labeltext18" x="628" y="1004.8">PIE</text>
+        <text transform="translate(175.1 1102.1) rotate(-60)" x="0" y="0">POR</text>
+        <text class="labeltext18" x="938.8" y="687.6">PRU</text>
+        <text class="labeltext18" transform="translate(729 1092) rotate(45)" x="0" y="0">ROM</text>
+        <text class="labeltext18" x="632.2" y="826">RUH</text>
+        <text class="labeltext18" x="1036.7" y="1015.4">RUM</text>
+        <text class="labeltext18" x="964.3" y="1100.6">SER</text>
+        <text x="1479.3" y="937.7">SEV</text>
+        <text class="labeltext18" x="791.9" y="779.1">SIL</text>
+        <text transform="translate(754.5 571.2) rotate(75)" x="0" y="0">SKA</text>
+        <text x="1194.2" y="1247.5">SMY</text>
+        <text x="302.3" y="1119.7">SPA</text>
+        <text x="1473.1" y="217.1">STP</text>
+        <text x="845.1" y="391.7">SWE</text>
+        <text x="1639.2" y="1292.2">SYR</text>
+        <text class="labeltext18" x="826" y="966.5">TRI</text>
+        <text x="634.4" y="1351.8">TUN</text>
+        <text class="labeltext18" x="706.5" y="1069">TUS</text>
+        <text class="labeltext18" x="717.4" y="936.7">TYR</text>
+        <text x="710" y="1209.1">TYS</text>
+        <text x="1119.7" y="860">UKR</text>
+        <text class="labeltext18" x="749.3" y="962.2">VEN</text>
+        <text class="labeltext18" x="834.5" y="919.6">VIE</text>
+        <text class="labeltext18" x="436.4" y="719.5">WAL</text>
+        <text class="labeltext18" x="938.8" y="783.4">WAR</text>
+        <text x="400.2" y="1209.1">WES</text>
+        <text class="labeltext18" x="496" y="653.5">YOR</text>
+    </g>
 
     <!-- Current phase -->
     <rect x="25" y="25" height="70" width="750" class="currentnoterect"/>
