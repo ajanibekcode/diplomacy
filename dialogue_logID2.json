@@ -1,0 +1,943 @@
+[
+  {
+    "phase": "S1901M",
+    "power": "GERMANY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 IMPORTANT \u2605\nReply with EITHER:\n  1) an EMPTY object: {}\n     \u2013 means you stay silent this round, OR\n  2) ONE valid JSON object with the keys below.\nANY extra text will be discarded.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\nExample:\n{\"recipients\":[\"FRANCE\"],\"message\":\"DMZ Ruhr?\",\n \"meta\":{\"intent\":\"offer_alliance\",\"trust\":{\"FRANCE\":0.6},\"confidence\":0.5}}\n\nPhase: S1901M | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nRemember: send either {} or one JSON object\u2014no markdown.\n",
+    "response": "Bonjour, France. Je propose une alliance pour contrer les menaces communes.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A VEN - TRI\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S A WAR - GAL\", \"A BUD S F SEV - RUM\", \"A BUD S F TRI\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\", \"A VIE S A WAR - GAL\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A ROM - VEN\", \"F TRI S A VEN\"]",
+    "response": "{\"A BUD - GAL\u201d, \u201cA BUD - RUM\u201d, \u201cA BUD - SER\u201d, \u201cA BUD - TRI\u201d, \u201cA BUD - VIE\u201d, \u201cA BUD H\u201d, \u201cA BUD S A VEN - TRI\u201d, \u201cA BUD S A V",
+    "orders": [
+      "A BUD - TRI",
+      "F TRI - ADR",
+      "A VIE S A VEN - TRI"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A LVP - CLY\", \"A LVP - EDI\", \"A LVP - WAL\", \"A LVP - YOR\", \"A LVP H\", \"A LVP S F EDI\", \"A LVP S F EDI - CLY\", \"A LVP S F EDI - YOR\", \"A LVP S F LON - WAL\", \"A LVP S F LON - YOR\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A LVP - CLY\", \"F EDI S A LVP - YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A LVP - WAL\", \"F LON S A LVP - YOR\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A LVP S F EDI - CLY\" : \"H\"}",
+    "orders": [
+      "F EDI S F LON - YOR",
+      "F LON - NTH",
+      "A LVP S F LON - WAL"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A MAR - BUR\": \"A MAR - BUR\", \"A PAR - BRE\": \"A PAR - BRE\", \"F BRE - ENG\": \"F BRE - ENG\"}",
+    "orders": [
+      "F BRE S A MAR - GAS",
+      "A MAR - BUR",
+      "A PAR S A MAR - GAS"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A WAR - PRU\", \"A BER S A WAR - SIL\", \"A BER S F KIE\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S A WAR - SIL\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\"]",
+    "response": "{\t\t    \t",
+    "orders": [
+      "A BER H",
+      "F KIE S A BER",
+      "A MUN S F KIE"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TRI - VEN\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BUD - TRI\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TRI\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\"]",
+    "response": "{\"orders\": [\"A ROM - APU\"]}",
+    "orders": [
+      "F NAP - TYS",
+      "A ROM S F NAP - APU",
+      "A VEN - TRI"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A WAR\", \"A MOS S A WAR - LVN\", \"A MOS S A WAR - UKR\", \"A MOS S F SEV\", \"A MOS S F STP/SC\", \"A MOS S F STP/SC - LVN\", \"A WAR - GAL\", \"A WAR - LVN\", \"A WAR - MOS\", \"A WAR - PRU\", \"A WAR - SIL\", \"A WAR - UKR\", \"A WAR H\", \"A WAR S A BER - PRU\", \"A WAR S A BER - SIL\", \"A WAR S A BUD - GAL\", \"A WAR S A MOS\", \"A WAR S A MOS - LVN\", \"A WAR S A MOS - UKR\", \"A WAR S A MUN - SIL\", \"A WAR S A VIE - GAL\", \"A WAR S F STP/SC - LVN\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A SMY - ARM\", \"F SEV S F ANK - ARM\", \"F SEV S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A MOS - LVN\", \"F STP/SC S A WAR - LVN\"]",
+    "response": "{",
+    "orders": [
+      "A MOS S F STP/SC",
+      "F SEV - ARM",
+      "F STP/SC H",
+      "A WAR S A BER - PRU"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ANK\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"A SMY S F SEV - ARM\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F SEV - ARM\", \"F ANK S F SEV - BLA\"]",
+    "response": "{",
+    "orders": [
+      "F ANK S A SMY - CON",
+      "A CON - ANK",
+      "A SMY - ARM"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "type": "engine_messages",
+    "messages": [
+      "Bonjour, France. Je propose une alliance pour contrer les menaces communes."
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A TRI\", \"A BUD S A TRI - SER\", \"A BUD S A TRI - VIE\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S A WAR - GAL\", \"A BUD S F ADR - TRI\", \"A BUD S F SEV - RUM\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A TRI\", \"A VIE S A TRI - BUD\", \"A VIE S A TRI - TYR\", \"A VIE S A WAR - GAL\", \"A VIE S F ADR - TRI\", \"F ADR - ALB\", \"F ADR - APU\", \"F ADR - ION\", \"F ADR - TRI\", \"F ADR - VEN\", \"F ADR C A TRI - ALB\", \"F ADR C A TRI - APU\", \"F ADR C A TRI - VEN\", \"F ADR H\", \"F ADR S A BUD - TRI\", \"F ADR S A ROM - APU\", \"F ADR S A ROM - VEN\", \"F ADR S A TRI\", \"F ADR S A TRI - ALB\", \"F ADR S A TRI - VEN\", \"F ADR S A VIE - TRI\", \"F ADR S F TYS - ION\"]",
+    "response": "{\"Order\": [\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A TRI\", \"A BUD S A TR",
+    "orders": [
+      "F ADR C A TRI - ALB",
+      "A BUD S A TRI - VIE",
+      "A VIE S F ADR - TRI"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A LVP - CLY\", \"A LVP - EDI\", \"A LVP - WAL\", \"A LVP - YOR\", \"A LVP H\", \"A LVP S F EDI\", \"A LVP S F EDI - CLY\", \"A LVP S F EDI - YOR\", \"A LVP S F NTH - EDI\", \"A LVP S F NTH - YOR\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A LVP - CLY\", \"F EDI S A LVP - YOR\", \"F EDI S F NTH\", \"F EDI S F NTH - NWG\", \"F EDI S F NTH - YOR\", \"F NTH - BEL\", \"F NTH - DEN\", \"F NTH - EDI\", \"F NTH - ENG\", \"F NTH - HEL\", \"F NTH - HOL\", \"F NTH - LON\", \"F NTH - NWG\", \"F NTH - NWY\", \"F NTH - SKA\", \"F NTH - YOR\", \"F NTH H\", \"F NTH S A BUR - BEL\", \"F NTH S A LVP - EDI\", \"F NTH S A LVP - YOR\", \"F NTH S F BRE - ENG\", \"F NTH S F EDI\", \"F NTH S F EDI - NWG\", \"F NTH S F EDI - YOR\", \"F NTH S F KIE - DEN\", \"F NTH S F KIE - HEL\", \"F NTH S F KIE - HOL\"]",
+    "response": "{ \"orders\": [",
+    "orders": [
+      "F EDI S F NTH - YOR",
+      "A LVP - YOR",
+      "F NTH S F EDI - YOR"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUR - BEL\", \"A BUR - GAS\", \"A BUR - MAR\", \"A BUR - MUN\", \"A BUR - PAR\", \"A BUR - PIC\", \"A BUR - RUH\", \"A BUR H\", \"A BUR S A BER - MUN\", \"A BUR S A MUN\", \"A BUR S A MUN - RUH\", \"A BUR S A PAR\", \"A BUR S A PAR - GAS\", \"A BUR S A PAR - PIC\", \"A BUR S F BRE - GAS\", \"A BUR S F BRE - PIC\", \"A BUR S F NTH - BEL\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A BUR\", \"A PAR S A BUR - GAS\", \"A PAR S A BUR - PIC\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A BUR - GAS\", \"F BRE S A BUR - PIC\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F NTH - ENG\"]",
+    "response": "{",
+    "orders": [
+      "F BRE S A PAR - PIC",
+      "A BUR S A MUN",
+      "A PAR - GAS"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A BUR - MUN\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A WAR - PRU\", \"A BER S A WAR - SIL\", \"A BER S F KIE\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BUR\", \"A MUN S A BUR - RUH\", \"A MUN S A PAR - BUR\", \"A MUN S A TRI - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S A WAR - SIL\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S F NTH - DEN\", \"F KIE S F NTH - HEL\", \"F KIE S F NTH - HOL\"]",
+    "response": "{ } ",
+    "orders": [
+      "A BER - MUN",
+      "F KIE - HOL",
+      "A MUN S A BER - SIL"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - NAP VIA\", \"A ROM - TUN VIA\", \"A ROM - TUS\", \"A ROM - TUS VIA\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A TRI - APU\", \"A ROM S A TRI - VEN\", \"A ROM S F ADR - APU\", \"A ROM S F ADR - VEN\", \"A ROM S F TYS - NAP\", \"A ROM S F TYS - TUS\", \"A TRI - ALB\", \"A TRI - ALB VIA\", \"A TRI - APU VIA\", \"A TRI - BUD\", \"A TRI - SER\", \"A TRI - TYR\", \"A TRI - VEN\", \"A TRI - VEN VIA\", \"A TRI - VIE\", \"A TRI H\", \"A TRI S A BUD\", \"A TRI S A BUD - SER\", \"A TRI S A BUD - VIE\", \"A TRI S A MUN - TYR\", \"A TRI S A ROM - VEN\", \"A TRI S A VIE\", \"A TRI S A VIE - BUD\", \"A TRI S A VIE - TYR\", \"A TRI S F ADR - ALB\", \"A TRI S F ADR - VEN\", \"F TYS - ION\", \"F TYS - LYO\", \"F TYS - NAP\", \"F TYS - ROM\", \"F TYS - TUN\", \"F TYS - TUS\", \"F TYS - WES\", \"F TYS C A ROM - NAP\", \"F TYS C A ROM - TUN\", \"F TYS C A ROM - TUS\", \"F TYS H\", \"F TYS S A ROM\", \"F TYS S A ROM - NAP\", \"F TYS S A ROM - TUS\", \"F TYS S F ADR - ION\"]",
+    "response": "{\"orders\": [\"A ROM - NAP\"]}",
+    "orders": [
+      "A ROM - TUS VIA",
+      "A TRI S A VIE",
+      "F TYS S A ROM"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A WAR\", \"A MOS S A WAR - LVN\", \"A MOS S A WAR - UKR\", \"A MOS S F SEV\", \"A MOS S F STP/SC\", \"A MOS S F STP/SC - LVN\", \"A WAR - GAL\", \"A WAR - LVN\", \"A WAR - MOS\", \"A WAR - PRU\", \"A WAR - SIL\", \"A WAR - UKR\", \"A WAR H\", \"A WAR S A BER - PRU\", \"A WAR S A BER - SIL\", \"A WAR S A BUD - GAL\", \"A WAR S A MOS\", \"A WAR S A MOS - LVN\", \"A WAR S A MOS - UKR\", \"A WAR S A MUN - SIL\", \"A WAR S A VIE - GAL\", \"A WAR S F STP/SC - LVN\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A SMY - ARM\", \"F SEV S F ANK - ARM\", \"F SEV S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A MOS - LVN\", \"F STP/SC S A WAR - LVN\"]",
+    "response": "{",
+    "orders": [
+      "A MOS S A WAR - UKR",
+      "F SEV S A SMY - ARM",
+      "F STP/SC - LVN",
+      "A WAR - SIL"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1901M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ANK\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"A SMY S F SEV - ARM\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F SEV - ARM\", \"F ANK S F SEV - BLA\"]",
+    "response": "{\"A CON - ANK\": [],",
+    "orders": [
+      "F ANK H",
+      "A CON - SMY",
+      "A SMY - CON"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "W1901A",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase W1901A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD D\", \"A VIE D\", \"F ADR D\"]",
+    "response": "{\"orders\": [\"A BUD D\", \"F ADR D\", \"A VIE D\"]}",
+    "orders": [
+      "F ADR D",
+      "A BUD D",
+      "A VIE D"
+    ]
+  },
+  {
+    "phase": "W1901A",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase W1901A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A KIE B\", \"F KIE B\", \"WAIVE\"]",
+    "response": "{ \"@type\": \"http://www.w3.org/2005/08/xps-ops#Kern\",",
+    "orders": [
+      "F KIE B"
+    ]
+  },
+  {
+    "phase": "W1901A",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase W1901A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A NAP B\", \"A ROM B\", \"A VEN B\", \"F NAP B\", \"F ROM B\", \"F VEN B\", \"WAIVE\"]",
+    "response": "{\"orders\": [\"A NAP B\"]}",
+    "orders": [
+      "A NAP B",
+      "A ROM B",
+      "WAIVE"
+    ]
+  },
+  {
+    "phase": "W1901A",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "S1902M",
+    "power": "GERMANY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 IMPORTANT \u2605\nReply with EITHER:\n  1) an EMPTY object: {}\n     \u2013 means you stay silent this round, OR\n  2) ONE valid JSON object with the keys below.\nANY extra text will be discarded.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\nExample:\n{\"recipients\":[\"FRANCE\"],\"message\":\"DMZ Ruhr?\",\n \"meta\":{\"intent\":\"offer_alliance\",\"trust\":{\"FRANCE\":0.6},\"confidence\":0.5}}\n\nPhase: S1902M | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nRemember: send either {} or one JSON object\u2014no markdown.\n",
+    "response": "Would you like to form an alliance against potential threats?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANGLE": 0.5
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A SIL - GAL\", \"A BUD S A TRI\", \"A BUD S A TRI - SER\", \"A BUD S A TRI - VIE\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S F SEV - RUM\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A TRI\", \"A VIE S A TRI - BUD\", \"A VIE S A TRI - TYR\"]",
+    "response": "{\"Order\": [\"A BUD - GAL\", \"A VIE - BUD\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\"]}",
+    "orders": [
+      "A BUD S F SEV - RUM",
+      "A VIE S A BUD - GAL"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A YOR - BEL VIA\", \"A YOR - DEN VIA\", \"A YOR - EDI\", \"A YOR - EDI VIA\", \"A YOR - HOL VIA\", \"A YOR - LON\", \"A YOR - LON VIA\", \"A YOR - LVP\", \"A YOR - NWY VIA\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F NTH - EDI\", \"A YOR S F NTH - LON\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F HOL - NTH\", \"F EDI S F NTH\", \"F EDI S F NTH - NWG\", \"F EDI S F NTH - YOR\", \"F NTH - BEL\", \"F NTH - DEN\", \"F NTH - EDI\", \"F NTH - ENG\", \"F NTH - HEL\", \"F NTH - HOL\", \"F NTH - LON\", \"F NTH - NWG\", \"F NTH - NWY\", \"F NTH - SKA\", \"F NTH - YOR\", \"F NTH C A YOR - BEL\", \"F NTH C A YOR - DEN\", \"F NTH C A YOR - EDI\", \"F NTH C A YOR - HOL\", \"F NTH C A YOR - LON\", \"F NTH C A YOR - NWY\", \"F NTH H\", \"F NTH S A BUR - BEL\", \"F NTH S A YOR\", \"F NTH S A YOR - EDI\", \"F NTH S A YOR - LON\", \"F NTH S F BRE - ENG\", \"F NTH S F EDI\", \"F NTH S F EDI - NWG\", \"F NTH S F EDI - YOR\", \"F NTH S F HOL\", \"F NTH S F HOL - BEL\", \"F NTH S F HOL - HEL\", \"F NTH S F KIE - DEN\", \"F NTH S F KIE - HEL\", \"F NTH S F KIE - HOL\"]",
+    "response": "{\"units\": [",
+    "orders": [
+      "F EDI - NWG",
+      "F NTH - EDI",
+      "A YOR - NWY VIA"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUR - BEL\", \"A BUR - GAS\", \"A BUR - MAR\", \"A BUR - MUN\", \"A BUR - PAR\", \"A BUR - PIC\", \"A BUR - RUH\", \"A BUR H\", \"A BUR S A BER - MUN\", \"A BUR S A GAS\", \"A BUR S A GAS - MAR\", \"A BUR S A GAS - PAR\", \"A BUR S A MUN\", \"A BUR S A MUN - RUH\", \"A BUR S A SIL - MUN\", \"A BUR S A YOR - BEL\", \"A BUR S F BRE - GAS\", \"A BUR S F BRE - PIC\", \"A BUR S F HOL - BEL\", \"A BUR S F NTH - BEL\", \"A GAS - BRE\", \"A GAS - BUR\", \"A GAS - MAR\", \"A GAS - PAR\", \"A GAS - SPA\", \"A GAS H\", \"A GAS S A BUR\", \"A GAS S A BUR - MAR\", \"A GAS S A BUR - PAR\", \"A GAS S A MUN - BUR\", \"A GAS S F BRE\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A BUR - GAS\", \"F BRE S A BUR - PIC\", \"F BRE S A GAS\", \"F BRE S F NTH - ENG\"]",
+    "response": "{",
+    "orders": [
+      "F BRE S A BUR - GAS",
+      "A BUR S F BRE - GAS",
+      "A GAS S A BUR - PAR"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A BUR - MUN\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F HOL - KIE\", \"A BER S F KIE\", \"A BER S F LVN - PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BUR\", \"A MUN S A BUR - RUH\", \"A MUN S A GAS - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A TRI - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F HOL - KIE\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F HOL - BEL\", \"F HOL - HEL\", \"F HOL - KIE\", \"F HOL - NTH\", \"F HOL H\", \"F HOL S A BER - KIE\", \"F HOL S A BUR - BEL\", \"F HOL S A MUN - KIE\", \"F HOL S A YOR - BEL\", \"F HOL S F EDI - NTH\", \"F HOL S F KIE\", \"F HOL S F KIE - HEL\", \"F HOL S F NTH\", \"F HOL S F NTH - BEL\", \"F HOL S F NTH - HEL\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S A SIL - BER\", \"F KIE S A YOR - DEN\", \"F KIE S A YOR - HOL\", \"F KIE S F HOL\", \"F KIE S F HOL - HEL\", \"F KIE S F LVN - BAL\", \"F KIE S F NTH - DEN\", \"F KIE S F NTH - HEL\", \"F KIE S F NTH - HOL\"]",
+    "response": "{    ",
+    "orders": [
+      "A BER - KIE",
+      "F HOL S A YOR - BEL",
+      "F KIE S A SIL - BER",
+      "A MUN S A GAS - BUR"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A NAP - APU\", \"A NAP - ROM\", \"A NAP - ROM VIA\", \"A NAP - TUN VIA\", \"A NAP - TUS VIA\", \"A NAP H\", \"A NAP S A TUS - ROM\", \"A NAP S F TYS - ROM\", \"A TRI - ALB\", \"A TRI - BUD\", \"A TRI - SER\", \"A TRI - TYR\", \"A TRI - VEN\", \"A TRI - VIE\", \"A TRI H\", \"A TRI S A BUD\", \"A TRI S A BUD - SER\", \"A TRI S A BUD - VIE\", \"A TRI S A MUN - TYR\", \"A TRI S A TUS - VEN\", \"A TRI S A VIE\", \"A TRI S A VIE - BUD\", \"A TRI S A VIE - TYR\", \"A TUS - NAP VIA\", \"A TUS - PIE\", \"A TUS - ROM\", \"A TUS - ROM VIA\", \"A TUS - TUN VIA\", \"A TUS - VEN\", \"A TUS H\", \"A TUS S A NAP - ROM\", \"A TUS S A TRI - VEN\", \"A TUS S F TYS - ROM\", \"F TYS - ION\", \"F TYS - LYO\", \"F TYS - NAP\", \"F TYS - ROM\", \"F TYS - TUN\", \"F TYS - TUS\", \"F TYS - WES\", \"F TYS C A NAP - ROM\", \"F TYS C A NAP - TUN\", \"F TYS C A NAP - TUS\", \"F TYS C A TUS - NAP\", \"F TYS C A TUS - ROM\", \"F TYS C A TUS - TUN\", \"F TYS H\", \"F TYS S A NAP\", \"F TYS S A NAP - ROM\", \"F TYS S A TUS\", \"F TYS S A TUS - ROM\"]",
+    "response": "{\"orders\": [\"A NAP - APU\"]}",
+    "orders": [
+      "A NAP - ROM",
+      "A TRI S A MUN - TYR",
+      "A TUS - NAP VIA",
+      "F TYS - ION"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A SIL - WAR\", \"A MOS S F LVN\", \"A MOS S F LVN - STP\", \"A MOS S F LVN - STP/SC\", \"A MOS S F SEV\", \"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BUD - GAL\", \"A SIL S A BUR - MUN\", \"A SIL S A MOS - WAR\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F KIE - BER\", \"A SIL S F LVN - PRU\", \"F LVN - BAL\", \"F LVN - BOT\", \"F LVN - PRU\", \"F LVN - STP/SC\", \"F LVN H\", \"F LVN S A BER - PRU\", \"F LVN S A MOS - STP\", \"F LVN S A SIL - PRU\", \"F LVN S F KIE - BAL\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A SMY - ARM\", \"F SEV S F ANK - ARM\", \"F SEV S F ANK - BLA\"]",
+    "response": "{",
+    "orders": [
+      "F LVN - PRU",
+      "A MOS S F SEV",
+      "F SEV S F ANK - ARM",
+      "A SIL S A BUD - GAL"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ANK\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"A SMY S F SEV - ARM\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F SEV - ARM\", \"F ANK S F SEV - BLA\"]",
+    "response": "{\"A CON - ANK\": [\"A CON - ANK\"],",
+    "orders": [
+      "F ANK - ARM",
+      "A CON S A SMY",
+      "A SMY - ANK"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "type": "engine_messages",
+    "messages": [
+      "Would you like to form an alliance against potential threats?"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "GERMANY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 IMPORTANT \u2605\nReply with EITHER:\n  1) an EMPTY object: {}\n     \u2013 means you stay silent this round, OR\n  2) ONE valid JSON object with the keys below.\nANY extra text will be discarded.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\nExample:\n{\"recipients\":[\"FRANCE\"],\"message\":\"DMZ Ruhr?\",\n \"meta\":{\"intent\":\"offer_alliance\",\"trust\":{\"FRANCE\":0.6},\"confidence\":0.5}}\n\nPhase: F1902M | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nRemember: send either {} or one JSON object\u2014no markdown.\n",
+    "response": "Hello, I am considering the possibility of joining forces. Would you be interested in forming an alliance?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANGLE": 0.6
+      },
+      "confidence": 0.5
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A SIL - GAL\", \"A BUD S A TRI\", \"A BUD S A TRI - SER\", \"A BUD S A TRI - VIE\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S F SEV - RUM\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A TRI\", \"A VIE S A TRI - BUD\", \"A VIE S A TRI - TYR\"]",
+    "response": "{\"legal_orders\": [\"A BUD - GAL\", \"A BUD S A VIE - GAL\", \"A VIE - BUD\", \"A VIE S A BUD - GAL\"]}",
+    "orders": [
+      "A BUD S A TRI",
+      "A VIE - TRI"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F NWG - EDI\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F HOL - NTH\", \"F EDI S F NWG\", \"F EDI S F NWG - CLY\", \"F EDI S F NWG - NTH\", \"F NWG - BAR\", \"F NWG - CLY\", \"F NWG - EDI\", \"F NWG - NAO\", \"F NWG - NTH\", \"F NWG - NWY\", \"F NWG H\", \"F NWG S A YOR - EDI\", \"F NWG S F EDI\", \"F NWG S F EDI - CLY\", \"F NWG S F EDI - NTH\", \"F NWG S F HOL - NTH\"]",
+    "response": "{\"orders\": [",
+    "orders": [
+      "F EDI S F NWG - CLY",
+      "F NWG - NTH",
+      "A YOR - LVP"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUR - BEL\", \"A BUR - GAS\", \"A BUR - MAR\", \"A BUR - MUN\", \"A BUR - PAR\", \"A BUR - PIC\", \"A BUR - RUH\", \"A BUR H\", \"A BUR S A BER - MUN\", \"A BUR S A GAS\", \"A BUR S A GAS - MAR\", \"A BUR S A GAS - PAR\", \"A BUR S A MUN\", \"A BUR S A MUN - RUH\", \"A BUR S A SIL - MUN\", \"A BUR S F BRE - GAS\", \"A BUR S F BRE - PIC\", \"A BUR S F HOL - BEL\", \"A GAS - BRE\", \"A GAS - BUR\", \"A GAS - MAR\", \"A GAS - PAR\", \"A GAS - SPA\", \"A GAS H\", \"A GAS S A BUR\", \"A GAS S A BUR - MAR\", \"A GAS S A BUR - PAR\", \"A GAS S A MUN - BUR\", \"A GAS S F BRE\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A BUR - GAS\", \"F BRE S A BUR - PIC\", \"F BRE S A GAS\"]",
+    "response": "{",
+    "orders": [
+      "F BRE - ENG",
+      "A BUR - MAR",
+      "A GAS S A MUN - BUR"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A BUR - MUN\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F HOL - KIE\", \"A BER S F KIE\", \"A BER S F PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BUR\", \"A MUN S A BUR - RUH\", \"A MUN S A GAS - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A TRI - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F HOL - KIE\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"A MUN S F PRU - BER\", \"F HOL - BEL\", \"F HOL - HEL\", \"F HOL - KIE\", \"F HOL - NTH\", \"F HOL H\", \"F HOL S A BER - KIE\", \"F HOL S A BUR - BEL\", \"F HOL S A MUN - KIE\", \"F HOL S F EDI - NTH\", \"F HOL S F KIE\", \"F HOL S F KIE - HEL\", \"F HOL S F NWG - NTH\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S A SIL - BER\", \"F KIE S F HOL\", \"F KIE S F HOL - HEL\", \"F KIE S F PRU - BAL\", \"F KIE S F PRU - BER\"]",
+    "response": "{}",
+    "orders": [
+      "A BER S A BUR - MUN",
+      "F HOL - BEL",
+      "F KIE - HOL",
+      "A MUN S A VIE - BOH"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A TRI - VEN\", \"A ROM S A TUS\", \"A ROM S A TUS - VEN\", \"A ROM S F ION - APU\", \"A ROM S F ION - NAP\", \"A TRI - ALB\", \"A TRI - BUD\", \"A TRI - SER\", \"A TRI - TYR\", \"A TRI - VEN\", \"A TRI - VIE\", \"A TRI H\", \"A TRI S A BUD\", \"A TRI S A BUD - SER\", \"A TRI S A BUD - VIE\", \"A TRI S A MUN - TYR\", \"A TRI S A ROM - VEN\", \"A TRI S A TUS - VEN\", \"A TRI S A VIE\", \"A TRI S A VIE - BUD\", \"A TRI S A VIE - TYR\", \"A TRI S F ION - ALB\", \"A TUS - PIE\", \"A TUS - ROM\", \"A TUS - VEN\", \"A TUS H\", \"A TUS S A ROM\", \"A TUS S A ROM - VEN\", \"A TUS S A TRI - VEN\", \"F ION - ADR\", \"F ION - AEG\", \"F ION - ALB\", \"F ION - APU\", \"F ION - EAS\", \"F ION - GRE\", \"F ION - NAP\", \"F ION - TUN\", \"F ION - TYS\", \"F ION H\", \"F ION S A ROM - APU\", \"F ION S A ROM - NAP\", \"F ION S A TRI - ALB\"]",
+    "response": "{\"orders\": [\"A ROM - APU\"]}",
+    "orders": [
+      "F ION - TUN",
+      "A ROM H",
+      "A TRI S A VIE - BUD",
+      "A TUS - VEN"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A SIL - WAR\", \"A MOS S F ARM - SEV\", \"A MOS S F PRU - LVN\", \"A MOS S F SEV\", \"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BUD - GAL\", \"A SIL S A BUR - MUN\", \"A SIL S A MOS - WAR\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F KIE - BER\", \"A SIL S F PRU\", \"A SIL S F PRU - BER\", \"F PRU - BAL\", \"F PRU - BER\", \"F PRU - LVN\", \"F PRU H\", \"F PRU S A BER\", \"F PRU S A MOS - LVN\", \"F PRU S A MUN - BER\", \"F PRU S A SIL - BER\", \"F PRU S F KIE - BAL\", \"F PRU S F KIE - BER\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A ANK - ARM\", \"F SEV S A BUD - RUM\", \"F SEV S F ARM\", \"F SEV S F ARM - BLA\"]",
+    "response": "{",
+    "orders": [
+      "A MOS S F SEV",
+      "F PRU H",
+      "F SEV S F ARM - BLA",
+      "A SIL S F KIE - BER"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1902M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ANK - ARM\", \"A ANK - CON\", \"A ANK - SMY\", \"A ANK H\", \"A ANK S A CON\", \"A ANK S A CON - SMY\", \"A ANK S F ARM\", \"A ANK S F SEV - ARM\", \"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A ANK\", \"A CON S A ANK - SMY\", \"A CON S F ARM - ANK\", \"F ARM - ANK\", \"F ARM - BLA\", \"F ARM - SEV\", \"F ARM H\", \"F ARM S A ANK\", \"F ARM S A CON - ANK\", \"F ARM S A MOS - SEV\", \"F ARM S F SEV\", \"F ARM S F SEV - BLA\"]",
+    "response": "{\"A ANK - ARM\": [\"A ANK - ARM\"],\"A ANK - CON\": [\"A ANK - CON\"],\"A ANK - SMY\": [\"A ANK - SMY\"],\"A ANK H\": [\"A ANK H\"],\"A ANK S A CON\":",
+    "orders": [
+      "A ANK S F SEV - ARM",
+      "F ARM S A CON - ANK",
+      "A CON S F ARM - ANK"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "type": "engine_messages",
+    "messages": [
+      "Hello, I am considering the possibility of joining forces. Would you be interested in forming an alliance?"
+    ]
+  },
+  {
+    "phase": "W1902A",
+    "power": "GERMANY",
+    "recipients": [
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 IMPORTANT \u2605\nReply with EITHER:\n  1) an EMPTY object: {}\n     \u2013 means you stay silent this round, OR\n  2) ONE valid JSON object with the keys below.\nANY extra text will be discarded.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\nExample:\n{\"recipients\":[\"FRANCE\"],\"message\":\"DMZ Ruhr?\",\n \"meta\":{\"intent\":\"offer_alliance\",\"trust\":{\"FRANCE\":0.6},\"confidence\":0.5}}\n\nPhase: W1902A | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nRemember: send either {} or one JSON object\u2014no markdown.\n",
+    "response": "Would you like to join our alliance against France?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "RUSSIA": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase W1902A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A KIE B\", \"F KIE B\", \"WAIVE\"]",
+    "response": "{ \"orders\": [ { \"command\": \"A\", \"unit\": \"KIE B\" }, { \"unit\": \"F\", \"command\": \"KIE B\" }, { \"unit\": \"WAIVE\" } ] }",
+    "orders": [
+      "F KIE B"
+    ]
+  },
+  {
+    "phase": "W1902A",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase W1902A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A NAP B\", \"F NAP B\", \"WAIVE\"]",
+    "response": "{\"orders\": [\"A NAP B\"]}",
+    "orders": [
+      "WAIVE"
+    ]
+  },
+  {
+    "phase": "W1902A",
+    "type": "engine_messages",
+    "messages": [
+      "Would you like to join our alliance against France?"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A SIL - GAL\", \"A BUD S A TRI\", \"A BUD S A TRI - SER\", \"A BUD S A TRI - VIE\", \"A BUD S A VEN - TRI\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S F SEV - RUM\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A TRI\", \"A VIE S A TRI - BUD\", \"A VIE S A TRI - TYR\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\"]",
+    "response": "{\"order\": [\"A BUD - GAL\", \"A BUD S A VIE - GAL\"]}",
+    "orders": [
+      "A BUD - VIE",
+      "A VIE S A VEN - TRI"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A LVP - CLY\", \"A LVP - EDI\", \"A LVP - WAL\", \"A LVP - YOR\", \"A LVP H\", \"A LVP S F EDI\", \"A LVP S F EDI - CLY\", \"A LVP S F EDI - YOR\", \"A LVP S F ENG - WAL\", \"A LVP S F NTH - EDI\", \"A LVP S F NTH - YOR\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A LVP - CLY\", \"F EDI S A LVP - YOR\", \"F EDI S F BEL - NTH\", \"F EDI S F ENG - NTH\", \"F EDI S F HOL - NTH\", \"F EDI S F NTH\", \"F EDI S F NTH - NWG\", \"F EDI S F NTH - YOR\", \"F NTH - BEL\", \"F NTH - DEN\", \"F NTH - EDI\", \"F NTH - ENG\", \"F NTH - HEL\", \"F NTH - HOL\", \"F NTH - LON\", \"F NTH - NWG\", \"F NTH - NWY\", \"F NTH - SKA\", \"F NTH - YOR\", \"F NTH H\", \"F NTH S A LVP - EDI\", \"F NTH S A LVP - YOR\", \"F NTH S F BEL\", \"F NTH S F BEL - ENG\", \"F NTH S F BEL - HOL\", \"F NTH S F EDI\", \"F NTH S F EDI - NWG\", \"F NTH S F EDI - YOR\", \"F NTH S F ENG\", \"F NTH S F ENG - BEL\", \"F NTH S F ENG - LON\", \"F NTH S F HOL\", \"F NTH S F HOL - BEL\", \"F NTH S F HOL - HEL\", \"F NTH S F KIE - DEN\", \"F NTH S F KIE - HEL\", \"F NTH S F KIE - HOL\"]",
+    "response": "{",
+    "orders": [
+      "F EDI S F NTH - NWG",
+      "A LVP S F ENG - WAL",
+      "F NTH S A LVP - YOR"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A GAS - BRE\", \"A GAS - BUR\", \"A GAS - MAR\", \"A GAS - PAR\", \"A GAS - SPA\", \"A GAS H\", \"A GAS S A MAR\", \"A GAS S A MAR - BUR\", \"A GAS S A MAR - SPA\", \"A GAS S A MUN - BUR\", \"A GAS S F ENG - BRE\", \"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A GAS\", \"A MAR S A GAS - BUR\", \"A MAR S A GAS - SPA\", \"A MAR S A MUN - BUR\", \"A MAR S A VEN - PIE\", \"F ENG - BEL\", \"F ENG - BRE\", \"F ENG - IRI\", \"F ENG - LON\", \"F ENG - MAO\", \"F ENG - NTH\", \"F ENG - PIC\", \"F ENG - WAL\", \"F ENG H\", \"F ENG S A GAS - BRE\", \"F ENG S A LVP - WAL\", \"F ENG S F BEL\", \"F ENG S F BEL - NTH\", \"F ENG S F BEL - PIC\", \"F ENG S F EDI - NTH\", \"F ENG S F HOL - BEL\", \"F ENG S F HOL - NTH\", \"F ENG S F NTH\", \"F ENG S F NTH - BEL\", \"F ENG S F NTH - LON\"]",
+    "response": "{",
+    "orders": [
+      "F ENG - LON",
+      "A GAS - MAR",
+      "A MAR S A VEN - PIE"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F HOL - KIE\", \"A BER S F KIE\", \"A BER S F PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A GAS - BUR\", \"A MUN S A MAR - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A TRI - TYR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F HOL - KIE\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"A MUN S F PRU - BER\", \"F BEL - ENG\", \"F BEL - HOL\", \"F BEL - NTH\", \"F BEL - PIC\", \"F BEL H\", \"F BEL S F EDI - NTH\", \"F BEL S F ENG\", \"F BEL S F ENG - NTH\", \"F BEL S F ENG - PIC\", \"F BEL S F HOL\", \"F BEL S F HOL - NTH\", \"F BEL S F KIE - HOL\", \"F BEL S F NTH\", \"F BEL S F NTH - ENG\", \"F BEL S F NTH - HOL\", \"F HOL - BEL\", \"F HOL - HEL\", \"F HOL - KIE\", \"F HOL - NTH\", \"F HOL H\", \"F HOL S A BER - KIE\", \"F HOL S A MUN - KIE\", \"F HOL S F BEL\", \"F HOL S F BEL - NTH\", \"F HOL S F EDI - NTH\", \"F HOL S F ENG - BEL\", \"F HOL S F ENG - NTH\", \"F HOL S F KIE\", \"F HOL S F KIE - HEL\", \"F HOL S F NTH\", \"F HOL S F NTH - BEL\", \"F HOL S F NTH - HEL\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S A SIL - BER\", \"F KIE S F BEL - HOL\", \"F KIE S F HOL\", \"F KIE S F HOL - HEL\", \"F KIE S F NTH - DEN\", \"F KIE S F NTH - HEL\", \"F KIE S F NTH - HOL\", \"F KIE S F PRU - BAL\", \"F KIE S F PRU - BER\"]",
+    "response": "{    ",
+    "orders": [
+      "F BEL S F ENG - PIC",
+      "A BER - MUN",
+      "F HOL - KIE",
+      "F KIE - HEL",
+      "A MUN - BER"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A TRI - VEN\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A TRI - ALB\", \"A TRI - BUD\", \"A TRI - SER\", \"A TRI - TYR\", \"A TRI - VEN\", \"A TRI - VIE\", \"A TRI H\", \"A TRI S A BUD\", \"A TRI S A BUD - SER\", \"A TRI S A BUD - VIE\", \"A TRI S A MUN - TYR\", \"A TRI S A ROM - VEN\", \"A TRI S A VEN\", \"A TRI S A VEN - TYR\", \"A TRI S A VIE\", \"A TRI S A VIE - BUD\", \"A TRI S A VIE - TYR\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BUD - TRI\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A TRI\", \"A VEN S A TRI - TYR\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"F TUN - ION\", \"F TUN - NAF\", \"F TUN - TYS\", \"F TUN - WES\", \"F TUN H\"]",
+    "response": "{\"orders\": [\"A ROM - APU\"]}",
+    "orders": [
+      "A ROM S A VEN",
+      "A TRI - SER",
+      "F TUN - TYS",
+      "A VEN S A VIE - TYR"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A SIL - WAR\", \"A MOS S F ARM - SEV\", \"A MOS S F PRU - LVN\", \"A MOS S F SEV\", \"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BUD - GAL\", \"A SIL S A MOS - WAR\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F KIE - BER\", \"A SIL S F PRU\", \"A SIL S F PRU - BER\", \"F PRU - BAL\", \"F PRU - BER\", \"F PRU - LVN\", \"F PRU H\", \"F PRU S A BER\", \"F PRU S A MOS - LVN\", \"F PRU S A MUN - BER\", \"F PRU S A SIL - BER\", \"F PRU S F KIE - BAL\", \"F PRU S F KIE - BER\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A ANK - ARM\", \"F SEV S A BUD - RUM\", \"F SEV S F ARM\", \"F SEV S F ARM - BLA\"]",
+    "response": "{",
+    "orders": [
+      "A MOS - SEV",
+      "F PRU S A SIL - BER",
+      "F SEV S F ARM - BLA",
+      "A SIL - MUN"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ANK - ARM\", \"A ANK - CON\", \"A ANK - SMY\", \"A ANK H\", \"A ANK S A CON\", \"A ANK S A CON - SMY\", \"A ANK S F ARM\", \"A ANK S F SEV - ARM\", \"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A ANK\", \"A CON S A ANK - SMY\", \"A CON S F ARM - ANK\", \"F ARM - ANK\", \"F ARM - BLA\", \"F ARM - SEV\", \"F ARM H\", \"F ARM S A ANK\", \"F ARM S A CON - ANK\", \"F ARM S A MOS - SEV\", \"F ARM S F SEV\", \"F ARM S F SEV - BLA\"]",
+    "response": "{\"orders\":[\"A ANK - ARM\",\"A CON - SMY\",\"A CON H\",\"A CON S A ANK - SMY\",\"A CON S F ARM - ANK\",\"F ARM - ANK\",\"F ARM S A MOS - SEV\",\"F ARM S F SEV - BLA",
+    "orders": [
+      "A ANK - SMY",
+      "F ARM - SEV",
+      "A CON S A ANK"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "F1903M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A SER\", \"A BUD S A SER - RUM\", \"A BUD S A SER - TRI\", \"A BUD S A SIL - GAL\", \"A BUD S A VEN - TRI\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S F SEV - RUM\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A SER - BUD\", \"A VIE S A SER - TRI\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\"]",
+    "response": "{\"order\": [\"A BUD - GAL\"]}",
+    "orders": [
+      "A BUD - GAL",
+      "A VIE S A MUN - BOH"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A LVP - CLY\", \"A LVP - EDI\", \"A LVP - WAL\", \"A LVP - YOR\", \"A LVP H\", \"A LVP S F EDI\", \"A LVP S F EDI - CLY\", \"A LVP S F EDI - YOR\", \"A LVP S F LON - WAL\", \"A LVP S F LON - YOR\", \"A LVP S F NTH - EDI\", \"A LVP S F NTH - YOR\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A LVP - CLY\", \"F EDI S A LVP - YOR\", \"F EDI S F BEL - NTH\", \"F EDI S F HEL - NTH\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F EDI S F NTH\", \"F EDI S F NTH - NWG\", \"F EDI S F NTH - YOR\", \"F NTH - BEL\", \"F NTH - DEN\", \"F NTH - EDI\", \"F NTH - ENG\", \"F NTH - HEL\", \"F NTH - HOL\", \"F NTH - LON\", \"F NTH - NWG\", \"F NTH - NWY\", \"F NTH - SKA\", \"F NTH - YOR\", \"F NTH H\", \"F NTH S A LVP - EDI\", \"F NTH S A LVP - YOR\", \"F NTH S F BEL\", \"F NTH S F BEL - ENG\", \"F NTH S F BEL - HOL\", \"F NTH S F EDI\", \"F NTH S F EDI - NWG\", \"F NTH S F EDI - YOR\", \"F NTH S F HEL\", \"F NTH S F HEL - DEN\", \"F NTH S F HEL - HOL\", \"F NTH S F KIE - DEN\", \"F NTH S F KIE - HEL\", \"F NTH S F KIE - HOL\", \"F NTH S F LON\", \"F NTH S F LON - ENG\", \"F NTH S F LON - YOR\"]",
+    "response": "{",
+    "orders": [
+      "F EDI S A LVP - CLY",
+      "A LVP S F EDI",
+      "F NTH - ENG"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A GAS - BRE\", \"A GAS - BUR\", \"A GAS - MAR\", \"A GAS - PAR\", \"A GAS - SPA\", \"A GAS H\", \"A GAS S A MAR\", \"A GAS S A MAR - BUR\", \"A GAS S A MAR - SPA\", \"A GAS S A MUN - BUR\", \"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A GAS\", \"A MAR S A GAS - BUR\", \"A MAR S A GAS - SPA\", \"A MAR S A MUN - BUR\", \"A MAR S A VEN - PIE\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A LVP - WAL\", \"F LON S A LVP - YOR\", \"F LON S F BEL - ENG\", \"F LON S F BEL - NTH\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\", \"F LON S F HEL - NTH\", \"F LON S F NTH\", \"F LON S F NTH - ENG\", \"F LON S F NTH - YOR\"]",
+    "response": "{",
+    "orders": [
+      "A GAS - SPA",
+      "F LON S F EDI - NTH",
+      "A MAR S A VEN - PIE"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F HEL - KIE\", \"A BER S F KIE\", \"A BER S F PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A GAS - BUR\", \"A MUN S A MAR - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F HEL - KIE\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"A MUN S F PRU - BER\", \"F BEL - ENG\", \"F BEL - HOL\", \"F BEL - NTH\", \"F BEL - PIC\", \"F BEL H\", \"F BEL S F EDI - NTH\", \"F BEL S F HEL - HOL\", \"F BEL S F HEL - NTH\", \"F BEL S F KIE - HOL\", \"F BEL S F LON - ENG\", \"F BEL S F LON - NTH\", \"F BEL S F NTH\", \"F BEL S F NTH - ENG\", \"F BEL S F NTH - HOL\", \"F HEL - DEN\", \"F HEL - HOL\", \"F HEL - KIE\", \"F HEL - NTH\", \"F HEL H\", \"F HEL S A BER - KIE\", \"F HEL S A MUN - KIE\", \"F HEL S F BEL - HOL\", \"F HEL S F BEL - NTH\", \"F HEL S F EDI - NTH\", \"F HEL S F KIE\", \"F HEL S F KIE - DEN\", \"F HEL S F KIE - HOL\", \"F HEL S F LON - NTH\", \"F HEL S F NTH\", \"F HEL S F NTH - DEN\", \"F HEL S F NTH - HOL\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S A SIL - BER\", \"F KIE S F BEL - HOL\", \"F KIE S F HEL\", \"F KIE S F HEL - DEN\", \"F KIE S F HEL - HOL\", \"F KIE S F NTH - DEN\", \"F KIE S F NTH - HEL\", \"F KIE S F NTH - HOL\", \"F KIE S F PRU - BAL\", \"F KIE S F PRU - BER\"]",
+    "response": "{ ",
+    "orders": [
+      "F BEL S F NTH - ENG",
+      "A BER S A SIL - MUN",
+      "F HEL - KIE",
+      "F KIE S A MUN - BER",
+      "A MUN S F PRU - BER"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - NAP VIA\", \"A ROM - TUN VIA\", \"A ROM - TUS\", \"A ROM - TUS VIA\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F TYS - NAP\", \"A ROM S F TYS - TUS\", \"A SER - ALB\", \"A SER - BUD\", \"A SER - BUL\", \"A SER - GRE\", \"A SER - RUM\", \"A SER - TRI\", \"A SER H\", \"A SER S A BUD\", \"A SER S A BUD - RUM\", \"A SER S A BUD - TRI\", \"A SER S A CON - BUL\", \"A SER S A VEN - TRI\", \"A SER S A VIE - BUD\", \"A SER S A VIE - TRI\", \"A SER S F SEV - RUM\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BUD - TRI\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A SER - TRI\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F TYS - ROM\", \"A VEN S F TYS - TUS\", \"F TYS - ION\", \"F TYS - LYO\", \"F TYS - NAP\", \"F TYS - ROM\", \"F TYS - TUN\", \"F TYS - TUS\", \"F TYS - WES\", \"F TYS C A ROM - NAP\", \"F TYS C A ROM - TUN\", \"F TYS C A ROM - TUS\", \"F TYS H\", \"F TYS S A ROM\", \"F TYS S A ROM - NAP\", \"F TYS S A ROM - TUS\", \"F TYS S A VEN - ROM\", \"F TYS S A VEN - TUS\"]",
+    "response": "{\"orders\": [\"A ROM - NAP\"]}",
+    "orders": [
+      "A ROM S A VEN - TUS",
+      "A SER - BUD",
+      "F TYS - ROM",
+      "A VEN - TRI"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A SIL - WAR\", \"A MOS S F ARM - SEV\", \"A MOS S F PRU - LVN\", \"A MOS S F SEV\", \"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BUD - GAL\", \"A SIL S A MOS - WAR\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F KIE - BER\", \"A SIL S F PRU\", \"A SIL S F PRU - BER\", \"F PRU - BAL\", \"F PRU - BER\", \"F PRU - LVN\", \"F PRU H\", \"F PRU S A BER\", \"F PRU S A MOS - LVN\", \"F PRU S A MUN - BER\", \"F PRU S A SIL - BER\", \"F PRU S F KIE - BAL\", \"F PRU S F KIE - BER\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A SER - RUM\", \"F SEV S A SMY - ARM\", \"F SEV S F ARM\", \"F SEV S F ARM - BLA\"]",
+    "response": "{",
+    "orders": [
+      "A MOS - UKR",
+      "F PRU S A MOS - LVN",
+      "F SEV S F ARM - BLA",
+      "A SIL S A BER - MUN"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1903M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SER - BUL\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ARM - ANK\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ARM\", \"A SMY S F ARM - ANK\", \"A SMY S F SEV - ARM\", \"F ARM - ANK\", \"F ARM - BLA\", \"F ARM - SEV\", \"F ARM H\", \"F ARM S A CON - ANK\", \"F ARM S A MOS - SEV\", \"F ARM S A SMY - ANK\", \"F ARM S F SEV\", \"F ARM S F SEV - BLA\"]",
+    "response": "{\"A CON - ANK\": [],",
+    "orders": [
+      "F ARM - BLA",
+      "A CON S A SMY",
+      "A SMY - SYR"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "W1903A",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase W1903A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A GAL D\", \"A VIE D\"]",
+    "response": "{\"Units\": [",
+    "orders": [
+      "A GAL D",
+      "A VIE D"
+    ]
+  },
+  {
+    "phase": "W1903A",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase W1903A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A LVP D\", \"F EDI D\", \"F ENG D\"]",
+    "response": "{ \"units\": [",
+    "orders": [
+      "F EDI D",
+      "F ENG D",
+      "A LVP D"
+    ]
+  },
+  {
+    "phase": "W1903A",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase W1903A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BRE B\", \"A PAR B\", \"F BRE B\", \"WAIVE\"]",
+    "response": "{",
+    "orders": [
+      "F BRE B",
+      "A PAR B"
+    ]
+  },
+  {
+    "phase": "W1903A",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase W1903A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A NAP B\", \"A VEN B\", \"F NAP B\", \"F VEN B\", \"WAIVE\"]",
+    "response": "{\"orders\": [\"A NAP B\"]}",
+    "orders": [
+      "F NAP B",
+      "A VEN B"
+    ]
+  },
+  {
+    "phase": "W1903A",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "S1904M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A TRI\", \"A VIE S A TRI - BUD\", \"A VIE S A TRI - TYR\", \"A VIE S A UKR - GAL\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\"]",
+    "response": "{\"order\": [\"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S",
+    "orders": [
+      "A VIE S A SIL - BOH"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A LVP - CLY\", \"A LVP - EDI\", \"A LVP - WAL\", \"A LVP - YOR\", \"A LVP H\", \"A LVP S F ENG - WAL\", \"A LVP S F LON - WAL\", \"A LVP S F LON - YOR\", \"F ENG - BEL\", \"F ENG - BRE\", \"F ENG - IRI\", \"F ENG - LON\", \"F ENG - MAO\", \"F ENG - NTH\", \"F ENG - PIC\", \"F ENG - WAL\", \"F ENG H\", \"F ENG S A LVP - WAL\", \"F ENG S A PAR - BRE\", \"F ENG S A PAR - PIC\", \"F ENG S F BEL\", \"F ENG S F BEL - NTH\", \"F ENG S F BEL - PIC\", \"F ENG S F BRE\", \"F ENG S F BRE - MAO\", \"F ENG S F BRE - PIC\", \"F ENG S F HEL - NTH\", \"F ENG S F LON\", \"F ENG S F LON - NTH\", \"F ENG S F LON - WAL\"]",
+    "response": "{\"units\": [",
+    "orders": [
+      "F ENG - WAL",
+      "A LVP - YOR"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A SPA\", \"A MAR S A SPA - GAS\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S A SPA - GAS\", \"A PAR S F BEL - PIC\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"A PAR S F ENG - BRE\", \"A PAR S F ENG - PIC\", \"A SPA - GAS\", \"A SPA - MAR\", \"A SPA - POR\", \"A SPA H\", \"A SPA S A MAR\", \"A SPA S A MAR - GAS\", \"A SPA S A PAR - GAS\", \"A SPA S F BRE - GAS\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S A SPA - GAS\", \"F BRE S F BEL - ENG\", \"F BRE S F BEL - PIC\", \"F BRE S F ENG\", \"F BRE S F ENG - MAO\", \"F BRE S F ENG - PIC\", \"F BRE S F LON - ENG\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A LVP - WAL\", \"F LON S A LVP - YOR\", \"F LON S F BEL - ENG\", \"F LON S F BEL - NTH\", \"F LON S F BRE - ENG\", \"F LON S F ENG\", \"F LON S F ENG - NTH\", \"F LON S F ENG - WAL\", \"F LON S F HEL - NTH\"]",
+    "response": "{",
+    "orders": [
+      "F BRE S A MAR - GAS",
+      "F LON S F HEL - NTH",
+      "A MAR S A PAR - BUR",
+      "A PAR S A SPA - GAS",
+      "A SPA - MAR"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F HEL - KIE\", \"A BER S F KIE\", \"A BER S F PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A TRI - TYR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F HEL - KIE\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"A MUN S F PRU - BER\", \"F BEL - ENG\", \"F BEL - HOL\", \"F BEL - NTH\", \"F BEL - PIC\", \"F BEL H\", \"F BEL S A PAR - PIC\", \"F BEL S F BRE - ENG\", \"F BEL S F BRE - PIC\", \"F BEL S F ENG\", \"F BEL S F ENG - NTH\", \"F BEL S F ENG - PIC\", \"F BEL S F HEL - HOL\", \"F BEL S F HEL - NTH\", \"F BEL S F KIE - HOL\", \"F BEL S F LON - ENG\", \"F BEL S F LON - NTH\", \"F HEL - DEN\", \"F HEL - HOL\", \"F HEL - KIE\", \"F HEL - NTH\", \"F HEL H\", \"F HEL S A BER - KIE\", \"F HEL S A MUN - KIE\", \"F HEL S F BEL - HOL\", \"F HEL S F BEL - NTH\", \"F HEL S F ENG - NTH\", \"F HEL S F KIE\", \"F HEL S F KIE - DEN\", \"F HEL S F KIE - HOL\", \"F HEL S F LON - NTH\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S A SIL - BER\", \"F KIE S F BEL - HOL\", \"F KIE S F HEL\", \"F KIE S F HEL - DEN\", \"F KIE S F HEL - HOL\", \"F KIE S F PRU - BAL\", \"F KIE S F PRU - BER\"]",
+    "response": "{}",
+    "orders": [
+      "F BEL S A PAR - PIC",
+      "A BER S A SIL",
+      "F HEL - KIE",
+      "F KIE S A BER",
+      "A MUN - SIL"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A CON - RUM\", \"A BUD S A SIL - GAL\", \"A BUD S A TRI\", \"A BUD S A TRI - SER\", \"A BUD S A TRI - VIE\", \"A BUD S A UKR - GAL\", \"A BUD S A UKR - RUM\", \"A BUD S A VEN - TRI\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S F BLA - RUM\", \"A BUD S F SEV - RUM\", \"A ROM - APU\", \"A ROM - NAP\", \"A ROM - NAP VIA\", \"A ROM - TUN VIA\", \"A ROM - TUS\", \"A ROM - TUS VIA\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A TRI - VEN\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TYS - NAP\", \"A ROM S F TYS - TUS\", \"A TRI - ALB\", \"A TRI - BUD\", \"A TRI - SER\", \"A TRI - TYR\", \"A TRI - VEN\", \"A TRI - VIE\", \"A TRI H\", \"A TRI S A BUD\", \"A TRI S A BUD - SER\", \"A TRI S A BUD - VIE\", \"A TRI S A MUN - TYR\", \"A TRI S A ROM - VEN\", \"A TRI S A VEN\", \"A TRI S A VEN - TYR\", \"A TRI S A VIE\", \"A TRI S A VIE - BUD\", \"A TRI S A VIE - TYR\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BUD - TRI\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A TRI\", \"A VEN S A TRI - TYR\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TYS - ROM\", \"A VEN S F TYS - TUS\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\", \"F NAP S F TYS\", \"F NAP S F TYS - ION\", \"F NAP S F TYS - ROM\", \"F TYS - ION\", \"F TYS - LYO\", \"F TYS - NAP\", \"F TYS - ROM\", \"F TYS - TUN\", \"F TYS - TUS\", \"F TYS - WES\", \"F TYS C A ROM - NAP\", \"F TYS C A ROM - TUN\", \"F TYS C A ROM - TUS\", \"F TYS H\", \"F TYS S A ROM\", \"F TYS S A ROM - NAP\", \"F TYS S A ROM - TUS\", \"F TYS S A VEN - ROM\", \"F TYS S A VEN - TUS\", \"F TYS S F NAP\", \"F TYS S F NAP - ION\", \"F TYS S F NAP - ROM\"]",
+    "response": "{\"orders\": [\"A BUD - GAL\"]}",
+    "orders": [
+      "A BUD S A VIE - GAL",
+      "F NAP S F TYS - ROM",
+      "A ROM S A VEN",
+      "A TRI - BUD",
+      "F TYS S F NAP",
+      "A VEN S F TYS - TUS"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BUD - GAL\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A UKR - GAL\", \"A SIL S A UKR - WAR\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F KIE - BER\", \"A SIL S F PRU\", \"A SIL S F PRU - BER\", \"A UKR - GAL\", \"A UKR - MOS\", \"A UKR - RUM\", \"A UKR - SEV\", \"A UKR - WAR\", \"A UKR H\", \"A UKR S A BUD - GAL\", \"A UKR S A BUD - RUM\", \"A UKR S A CON - RUM\", \"A UKR S A CON - SEV\", \"A UKR S A SIL - GAL\", \"A UKR S A SIL - WAR\", \"A UKR S A VIE - GAL\", \"A UKR S F BLA - RUM\", \"A UKR S F BLA - SEV\", \"A UKR S F SEV\", \"A UKR S F SEV - RUM\", \"F PRU - BAL\", \"F PRU - BER\", \"F PRU - LVN\", \"F PRU H\", \"F PRU S A BER\", \"F PRU S A MUN - BER\", \"F PRU S A SIL - BER\", \"F PRU S F KIE - BAL\", \"F PRU S F KIE - BER\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A CON - ARM\", \"F SEV S A CON - RUM\", \"F SEV S A SYR - ARM\", \"F SEV S A UKR - RUM\", \"F SEV S F BLA\", \"F SEV S F BLA - ARM\", \"F SEV S F BLA - RUM\"]",
+    "response": "{",
+    "orders": [
+      "F PRU S A SIL - BER",
+      "F SEV S F BLA",
+      "A SIL - BER",
+      "A UKR S A BUD - GAL"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A CON - ANK\", \"A CON - ANK VIA\", \"A CON - ARM VIA\", \"A CON - BUL\", \"A CON - BUL VIA\", \"A CON - RUM VIA\", \"A CON - SEV VIA\", \"A CON - SMY\", \"A CON H\", \"A CON S A SYR - SMY\", \"A CON S F BLA - ANK\", \"A CON S F BLA - BUL\", \"A CON S F BLA - BUL/EC\", \"A SYR - ARM\", \"A SYR - SMY\", \"A SYR H\", \"A SYR S A CON - ARM\", \"A SYR S A CON - SMY\", \"A SYR S F BLA - ARM\", \"A SYR S F SEV - ARM\", \"F BLA - ANK\", \"F BLA - ARM\", \"F BLA - BUL/EC\", \"F BLA - CON\", \"F BLA - RUM\", \"F BLA - SEV\", \"F BLA C A CON - ANK\", \"F BLA C A CON - ARM\", \"F BLA C A CON - BUL\", \"F BLA C A CON - RUM\", \"F BLA C A CON - SEV\", \"F BLA H\", \"F BLA S A BUD - RUM\", \"F BLA S A CON\", \"F BLA S A CON - ANK\", \"F BLA S A CON - BUL\", \"F BLA S A SYR - ARM\", \"F BLA S A UKR - RUM\", \"F BLA S A UKR - SEV\", \"F BLA S F SEV\", \"F BLA S F SEV - ARM\", \"F BLA S F SEV - RUM\"]",
+    "response": "{\"legalOrders\":[\"A CON - ANK\",\"A CON - ANK VIA\",\"A CON - ARM VIA\",\"A CON - BUL\",\"A CON - BUL VIA\",\"A CON - RUM VIA\",\"A CON - SEV VIA\",\"A CON - SMY\",\"A",
+    "orders": [
+      "F BLA S A CON - ANK",
+      "A CON - BUL",
+      "A SYR S F SEV - ARM"
+    ]
+  },
+  {
+    "phase": "S1904M",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "F1904M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A TRI\", \"A VIE S A TRI - BUD\", \"A VIE S A TRI - TYR\", \"A VIE S A UKR - GAL\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\"]",
+    "response": "{\"orders\": [",
+    "orders": [
+      "A VIE - TYR"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F LON\", \"A YOR S F LON - WAL\", \"A YOR S F WAL\", \"A YOR S F WAL - LON\", \"A YOR S F WAL - LVP\", \"F WAL - ENG\", \"F WAL - IRI\", \"F WAL - LON\", \"F WAL - LVP\", \"F WAL H\", \"F WAL S A YOR - LON\", \"F WAL S A YOR - LVP\", \"F WAL S F BEL - ENG\", \"F WAL S F BRE - ENG\", \"F WAL S F LON\", \"F WAL S F LON - ENG\"]",
+    "response": "{  ",
+    "orders": [
+      "F WAL S F BRE - ENG",
+      "A YOR S F WAL - LVP"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A SPA\", \"A MAR S A SPA - GAS\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S A SPA - GAS\", \"A PAR S F BEL - PIC\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"A SPA - GAS\", \"A SPA - MAR\", \"A SPA - POR\", \"A SPA H\", \"A SPA S A MAR\", \"A SPA S A MAR - GAS\", \"A SPA S A PAR - GAS\", \"A SPA S F BRE - GAS\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S A SPA - GAS\", \"F BRE S F BEL - ENG\", \"F BRE S F BEL - PIC\", \"F BRE S F LON - ENG\", \"F BRE S F WAL - ENG\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A YOR\", \"F LON S A YOR - WAL\", \"F LON S F BEL - ENG\", \"F LON S F BEL - NTH\", \"F LON S F BRE - ENG\", \"F LON S F HEL - NTH\", \"F LON S F WAL\", \"F LON S F WAL - ENG\"]",
+    "response": "{",
+    "orders": [
+      "F BRE - PIC",
+      "F LON - NTH",
+      "A MAR - SPA",
+      "A PAR S F BRE",
+      "A SPA S A PAR - GAS"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F HEL - KIE\", \"A BER S F KIE\", \"A BER S F PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A TRI - TYR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F HEL - KIE\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"A MUN S F PRU - BER\", \"F BEL - ENG\", \"F BEL - HOL\", \"F BEL - NTH\", \"F BEL - PIC\", \"F BEL H\", \"F BEL S A PAR - PIC\", \"F BEL S F BRE - ENG\", \"F BEL S F BRE - PIC\", \"F BEL S F HEL - HOL\", \"F BEL S F HEL - NTH\", \"F BEL S F KIE - HOL\", \"F BEL S F LON - ENG\", \"F BEL S F LON - NTH\", \"F BEL S F WAL - ENG\", \"F HEL - DEN\", \"F HEL - HOL\", \"F HEL - KIE\", \"F HEL - NTH\", \"F HEL H\", \"F HEL S A BER - KIE\", \"F HEL S A MUN - KIE\", \"F HEL S F BEL - HOL\", \"F HEL S F BEL - NTH\", \"F HEL S F KIE\", \"F HEL S F KIE - DEN\", \"F HEL S F KIE - HOL\", \"F HEL S F LON - NTH\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\", \"F KIE S A SIL - BER\", \"F KIE S F BEL - HOL\", \"F KIE S F HEL\", \"F KIE S F HEL - DEN\", \"F KIE S F HEL - HOL\", \"F KIE S F PRU - BAL\", \"F KIE S F PRU - BER\"]",
+    "response": "{ \"@context\": \"http://d-nb.info/gnd/gnd-context-2014.jsonld\",",
+    "orders": [
+      "F BEL - PIC",
+      "A BER S A MUN - SIL",
+      "F HEL H",
+      "F KIE S A MUN - BER",
+      "A MUN S A VIE - TYR"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A BUL - RUM\", \"A BUD S A BUL - SER\", \"A BUD S A SIL - GAL\", \"A BUD S A TRI\", \"A BUD S A TRI - SER\", \"A BUD S A TRI - VIE\", \"A BUD S A UKR - GAL\", \"A BUD S A UKR - RUM\", \"A BUD S A VEN - TRI\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S F BLA - RUM\", \"A BUD S F SEV - RUM\", \"A ROM - APU\", \"A ROM - NAP\", \"A ROM - NAP VIA\", \"A ROM - TUN VIA\", \"A ROM - TUS\", \"A ROM - TUS VIA\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A TRI - VEN\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TYS - NAP\", \"A ROM S F TYS - TUS\", \"A TRI - ALB\", \"A TRI - BUD\", \"A TRI - SER\", \"A TRI - TYR\", \"A TRI - VEN\", \"A TRI - VIE\", \"A TRI H\", \"A TRI S A BUD\", \"A TRI S A BUD - SER\", \"A TRI S A BUD - VIE\", \"A TRI S A BUL - SER\", \"A TRI S A MUN - TYR\", \"A TRI S A ROM - VEN\", \"A TRI S A VEN\", \"A TRI S A VEN - TYR\", \"A TRI S A VIE\", \"A TRI S A VIE - BUD\", \"A TRI S A VIE - TYR\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BUD - TRI\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A TRI\", \"A VEN S A TRI - TYR\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TYS - ROM\", \"A VEN S F TYS - TUS\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\", \"F NAP S F TYS\", \"F NAP S F TYS - ION\", \"F NAP S F TYS - ROM\", \"F TYS - ION\", \"F TYS - LYO\", \"F TYS - NAP\", \"F TYS - ROM\", \"F TYS - TUN\", \"F TYS - TUS\", \"F TYS - WES\", \"F TYS C A ROM - NAP\", \"F TYS C A ROM - TUN\", \"F TYS C A ROM - TUS\", \"F TYS H\", \"F TYS S A ROM\", \"F TYS S A ROM - NAP\", \"F TYS S A ROM - TUS\", \"F TYS S A VEN - ROM\", \"F TYS S A VEN - TUS\", \"F TYS S F NAP\", \"F TYS S F NAP - ION\", \"F TYS S F NAP - ROM\"]",
+    "response": "{",
+    "orders": [
+      "A BUD H",
+      "F NAP - APU",
+      "A ROM - TUS VIA",
+      "A TRI S A VIE",
+      "F TYS - ION",
+      "A VEN S F TYS - ROM"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BUD - GAL\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A UKR - GAL\", \"A SIL S A UKR - WAR\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F KIE - BER\", \"A SIL S F PRU\", \"A SIL S F PRU - BER\", \"A UKR - GAL\", \"A UKR - MOS\", \"A UKR - RUM\", \"A UKR - SEV\", \"A UKR - WAR\", \"A UKR H\", \"A UKR S A BUD - GAL\", \"A UKR S A BUD - RUM\", \"A UKR S A BUL - RUM\", \"A UKR S A BUL - SEV\", \"A UKR S A SIL - GAL\", \"A UKR S A SIL - WAR\", \"A UKR S A VIE - GAL\", \"A UKR S F BLA - RUM\", \"A UKR S F BLA - SEV\", \"A UKR S F SEV\", \"A UKR S F SEV - RUM\", \"F PRU - BAL\", \"F PRU - BER\", \"F PRU - LVN\", \"F PRU H\", \"F PRU S A BER\", \"F PRU S A MUN - BER\", \"F PRU S A SIL - BER\", \"F PRU S F KIE - BAL\", \"F PRU S F KIE - BER\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A BUL - ARM\", \"F SEV S A BUL - RUM\", \"F SEV S A SYR - ARM\", \"F SEV S A UKR - RUM\", \"F SEV S F BLA\", \"F SEV S F BLA - ARM\", \"F SEV S F BLA - RUM\"]",
+    "response": "{",
+    "orders": [
+      "F PRU H",
+      "F SEV S A BUL - ARM",
+      "A SIL S F KIE - BER",
+      "A UKR S A BUD - RUM"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1904M.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A BUL - ANK VIA\", \"A BUL - ARM VIA\", \"A BUL - CON\", \"A BUL - CON VIA\", \"A BUL - GRE\", \"A BUL - RUM\", \"A BUL - RUM VIA\", \"A BUL - SER\", \"A BUL - SEV VIA\", \"A BUL H\", \"A BUL S A BUD - RUM\", \"A BUL S A BUD - SER\", \"A BUL S A TRI - SER\", \"A BUL S A UKR - RUM\", \"A BUL S F BLA - CON\", \"A BUL S F BLA - RUM\", \"A BUL S F SEV - RUM\", \"A SYR - ARM\", \"A SYR - SMY\", \"A SYR H\", \"A SYR S A BUL - ARM\", \"A SYR S F BLA - ARM\", \"A SYR S F SEV - ARM\", \"F BLA - ANK\", \"F BLA - ARM\", \"F BLA - BUL/EC\", \"F BLA - CON\", \"F BLA - RUM\", \"F BLA - SEV\", \"F BLA C A BUL - ANK\", \"F BLA C A BUL - ARM\", \"F BLA C A BUL - CON\", \"F BLA C A BUL - RUM\", \"F BLA C A BUL - SEV\", \"F BLA H\", \"F BLA S A BUD - RUM\", \"F BLA S A BUL\", \"F BLA S A BUL - CON\", \"F BLA S A BUL - RUM\", \"F BLA S A SYR - ARM\", \"F BLA S A UKR - RUM\", \"F BLA S A UKR - SEV\", \"F BLA S F SEV\", \"F BLA S F SEV - ARM\", \"F BLA S F SEV - RUM\"]",
+    "response": "{\"A BUL - ANK VIA\": [],",
+    "orders": [
+      "F BLA S F SEV",
+      "A BUL - SEV VIA",
+      "A SYR S A BUL - ARM"
+    ]
+  },
+  {
+    "phase": "F1904M",
+    "type": "engine_messages",
+    "messages": []
+  },
+  {
+    "phase": "W1904A",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase W1904A.\nReturn ONE JSON array with exactly one legal order per unit.\nLegal orders:\n[\"A ANK B\", \"A CON B\", \"A SMY B\", \"F ANK B\", \"F CON B\", \"F SMY B\", \"WAIVE\"]",
+    "response": "{\"A\": [\"ANK\", \"CON\", \"SMY\"], \"B\": [\"ANA\", \"CON\", \"SMY\"]}",
+    "orders": [
+      "A ANK B",
+      "F CON B",
+      "A SMY B"
+    ]
+  },
+  {
+    "phase": "W1904A",
+    "type": "engine_messages",
+    "messages": []
+  }
+]

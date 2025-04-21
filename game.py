@@ -23,14 +23,14 @@ MODEL_BY_POWER = {
     "RUSSIA": "phi4",
     "TURKEY": "starling-lm:7b-alpha",
 } 
-OUTPUT_FILE  = Path("game_state:ID1.json")
-DIALOGUE_FILE = Path("dialogue_logID1.json")
+OUTPUT_FILE  = Path("game_stateID3.json")
+DIALOGUE_FILE = Path("dialogue_logID3.json")
 MAX_YEAR = 1904
 DIALOGUE_LOG: list[dict] = []
 PHASE_MESSAGES = {}
 
 # optimize by reducing tokens
-CHAT_TOKENS = 96
+CHAT_TOKENS = 256
 ORDER_TOKENS = 64
 
 # Rule‑book appended to every prompt (≈ 140 tokens)
@@ -175,13 +175,12 @@ def run_ollama(model: str,
         "system":  system or "",
         "stream":  False,
         "format": "json",
-        "options": {"num_predict": max_tokens}
+        "options": {"num_predict": max_tokens
+                }
     }
     print(f"[REQ]  POST /api/generate  model={model}  "
           f"prompt_tokens≈{len(prompt.split())}")
-    resp = requests.post("http://127.0.0.1:11434/api/generate", json=payload, timeout=120)
-    resp.raise_for_status()
-    return resp.json()["response"]
+    return _ollama_call(payload)
 
 # --------------------------------------------------------------------------- #
 #  Order normalisation                                                        #
@@ -201,6 +200,20 @@ def _to_string_orders(raw: list) -> list[str]:
                 out.append(f"{unit} {action}".strip())
     return out
 
+
+# ----------------------------------------------------------------------- #
+#  ONE global Session so HTTP keep‑alive works                            #
+# ----------------------------------------------------------------------- #
+_SESSION = requests.Session()
+
+def _ollama_call(payload: dict) -> str:
+    """Blocking POST that returns the model's raw response string."""
+    r = _SESSION.post("http://127.0.0.1:11434/api/generate",
+                      json=payload, timeout=120)
+    r.raise_for_status()
+    return r.json()["response"]
+
+
 # --------------------------------------------------------------------------- #
 #  Ollama helpers                                                              #
 # --------------------------------------------------------------------------- #
@@ -219,20 +232,15 @@ def get_ollama_message(game: Game, power: str) -> str:
                for m in PHASE_MESSAGES.get(phase, [])
                if m['power'] == power or power in m['recipients']
             ]
+          
+    # ------------------------------------------------------------------ #
 
-        # ------------------------------------------------------------------ #
-    #  PROMPT — either a valid JSON object *or* {} for silence           #
-    # ------------------------------------------------------------------ #
-        # ------------------------------------------------------------------ #
-    #  PROMPT — either {} or ONE JSON object with meta                   #
-    # ------------------------------------------------------------------ #
     prompt = (
-        "★ IMPORTANT ★\n"
-        "Reply with EITHER:\n"
-        "  1) an EMPTY object: {}\n"
-        "     – means you stay silent this round, OR\n"
-        "  2) ONE valid JSON object with the keys below.\n"
-        "ANY extra text will be discarded.\n\n"
+        "★ STRATEGIC MESSAGE REQUIRED ★\n"
+        "Reply with ONE valid JSON object using the format below.\n"
+        "Silence is **not allowed** in this game phase.\n"
+        "Your message should reflect your strategy: alliances, threats, deception, or intel sharing.\n"
+        "No markdown, no extra text — only the JSON.\n\n"
 
         "JSON SCHEMA\n"
         "{\n"
@@ -245,19 +253,54 @@ def get_ollama_message(game: Game, power: str) -> str:
         "  }\n"
         "}\n\n"
 
-        "Example:\n"
-        "{\"recipients\":[\"FRANCE\"],\"message\":\"DMZ Ruhr?\",\n"
-        " \"meta\":{\"intent\":\"offer_alliance\",\"trust\":{\"FRANCE\":0.6},\"confidence\":0.5}}\n\n"
+        "★ EXAMPLES ★\n"
+        "{\n"
+        "  \"recipients\": [\"FRANCE\"],\n"
+        "  \"message\": \"DMZ Ruhr?\",\n"
+        "  \"meta\": {\n"
+        "    \"intent\": \"offer_alliance\",\n"
+        "    \"trust\": {\"FRANCE\": 0.6},\n"
+        "    \"confidence\": 0.5\n"
+        "  }\n"
+        "}\n\n"
+        "{\n"
+        "  \"recipients\": [\"GERMANY\"],\n"
+        "  \"message\": \"Withdraw from Denmark or face consequences.\",\n"
+        "  \"meta\": {\n"
+        "    \"intent\": \"threat\",\n"
+        "    \"trust\": {\"GERMANY\": 0.2},\n"
+        "    \"confidence\": 0.8\n"
+        "  }\n"
+        "}\n\n"
+        "{\n"
+        "  \"recipients\": [\"ITALY\"],\n"
+        "  \"message\": \"I’m moving into Tyrolia to protect you from Austria.\",\n"
+        "  \"meta\": {\n"
+        "    \"intent\": \"lie\",\n"
+        "    \"trust\": {\"ITALY\": 0.9},\n"
+        "    \"confidence\": 0.7\n"
+        "  }\n"
+        "}\n\n"
+        "{\n"
+        "  \"recipients\": [\"TURKEY\"],\n"
+        "  \"message\": \"Austria is planning to attack you next turn.\",\n"
+        "  \"meta\": {\n"
+        "    \"intent\": \"share_info\",\n"
+        "    \"trust\": {\"TURKEY\": 0.5},\n"
+        "    \"confidence\": 0.6\n"
+        "  }\n"
+        "}\n\n"
 
         f"Phase: {phase} | You are {power}\n"
         f"Allowed recipients: {', '.join(other_powers)}\n"
         f"Past messages visible to you this phase:\n{json.dumps(history, indent=2)}\n\n"
-        "Remember: send either {} or one JSON object—no markdown.\n"
+        "Now respond with ONE valid JSON object as above.\n"
     )
 
-    raw_output = run_ollama(model, prompt, max_tokens=CHAT_TOKENS)
 
-    match = re.search(r"\{.*?\}", raw_output, re.DOTALL)
+    raw_output = run_ollama(model, prompt)
+
+    match = re.search(r"\{.*\}", raw_output, re.DOTALL)
 
     if not match:
         print(f"[{power}] No valid JSON object found in response.")
@@ -269,7 +312,7 @@ def get_ollama_message(game: Game, power: str) -> str:
         result = json.loads(raw_output)
     except json.JSONDecodeError:
 
-        m = re.search(r"\{.*?\}", raw_output, re.S)
+        m = re.search(r"\{.*\}", raw_output, re.S)
         if not m:
             print(f"[{power}] No JSON found.")
             return ""
@@ -345,7 +388,7 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
         "Legal orders:\n" + json.dumps(legal_flat)
     )
 
-    output = run_ollama(model, prompt, system_text, max_tokens=ORDER_TOKENS)
+    output = run_ollama(model, prompt, system_text)
 
     # Parse first JSON array in the response
     m = re.search(r"\[[^\]]*\]", output, re.S)
