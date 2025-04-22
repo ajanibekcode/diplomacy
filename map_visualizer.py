@@ -32,4 +32,4 @@ def render_game_phases(saved_game_path: str, output_dir: str):
 
     print(f"\nAll SVG maps saved to '{output_dir}'")
 
-render_game_phases("test_normal_game_state.json", "map_images")
+render_game_phases("final_game_state.json", "map_images")

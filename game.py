@@ -23,9 +23,9 @@ MODEL_BY_POWER = {
     "RUSSIA": "phi4",
     "TURKEY": "starling-lm:7b-alpha",
 } 
-OUTPUT_FILE  = Path("test_normal_game_state.json")
-DIALOGUE_FILE = Path("test_normal_dialogue_log.json")
-MAX_YEAR = 1903
+OUTPUT_FILE  = Path("final_game_state.json")
+DIALOGUE_FILE = Path("final_dialogue_log.json")
+MAX_YEAR = 1912
 DIALOGUE_LOG: list[dict] = []
 PHASE_MESSAGES = {}
 
@@ -185,7 +185,6 @@ def filter_to_legal(game: Game, power: str, orders: list[str]) -> list[str]:
 # --------------------------------------------------------------------------- #
 #  Thin wrapper around `ollama run` so we can add --system the first time     #
 # --------------------------------------------------------------------------- #
-CHAT_MODELS = {"deepseek-r1:14b"}
 
 def run_ollama(model: str,
                prompt: str,
@@ -193,26 +192,15 @@ def run_ollama(model: str,
                *,
                max_tokens: int = 256) -> str:
     # if this is one of the chat models, wrap system+user
-    if model in CHAT_MODELS:
-        payload = {
-            "model": model,
-            "messages": [
-                {"role": "system", "content": system or ""},
-                {"role": "user",   "content": prompt}
-            ],
-            "stream": False,
-            "format": "json",
-            "options": {"num_predict": max_tokens}
-        }
-    else:
-        payload = {
-            "model": model,
-            "system": system or "",
-            "prompt": prompt,
-            "stream": False,
-            "format": "json",
-            "options": {"num_predict": max_tokens}
-        }
+   
+    payload = {
+        "model": model,
+        "system": system or "",
+        "prompt": prompt,
+        "stream": False,
+        "format": "json",
+        "options": {"num_predict": max_tokens}
+    }
     print(f"[REQ] POST /api/generate model={model} prompt_tokens≈{len(prompt.split())}")
     return _ollama_call(payload)
 
@@ -270,7 +258,7 @@ def get_ollama_message(game: Game, power: str) -> str:
     # ------------------------------------------------------------------ #
 
     prompt = (
-        "★ STRATEGIC MESSAGE REQUIRED ★\n"
+        "STRATEGIC MESSAGE REQUIRED\n"
         "Reply with ONE valid JSON object using the format below.\n"
         "The objective is to control as many supply centers as possible by the end of 1912.\n"
         "Use the current year and phase to guide your tone and tactics — build trust early, position mid-game, and act boldly near the end.\n\n"
@@ -426,8 +414,8 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
 
     output = run_ollama(model, prompt, system_text)
 
-    print(f"\n==== [{power}] — PHASE {game.get_current_phase()} ====")
-    print("Raw model output:\n", output)
+    # print(f"\n==== [{power}] — PHASE {game.get_current_phase()} ====")
+    # print("Raw model output:\n", output)
 
     # Extract all possible orders from the response
     extracted_orders = []
@@ -463,8 +451,8 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
         
         extracted_orders = extract_from_structure(parsed)
         
-        if extracted_orders:
-            print(f"[{power}] Extracted orders from parsed JSON structure: {extracted_orders}")
+        # if extracted_orders:
+        #     print(f"[{power}] Extracted orders from parsed JSON structure: {extracted_orders}")
         
     except json.JSONDecodeError:
         # If not valid JSON, try regex extraction
@@ -514,7 +502,7 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
                     start_idx = potential_start + 1
             
             extracted_orders.extend(full_matches)
-            print(f"[{power}] Extracted orders with pattern matching: {extracted_orders}")
+            # print(f"[{power}] Extracted orders with pattern matching: {extracted_orders}")
     
     # Normalize and deduplicate orders
     orders_raw = []
@@ -526,11 +514,11 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
         if clean_order not in orders_raw:
             orders_raw.append(clean_order)
     
-    print(f"[{power}] Parsed orders from model: {orders_raw}")
+    # print(f"[{power}] Parsed orders from model: {orders_raw}")
 
     # Filter to only legal orders
     orders = filter_to_legal(game, power, orders_raw)
-    print(f"[{power}] Filtered legal orders: {orders}")
+    # print(f"[{power}] Filtered legal orders: {orders}")
     
     # Back-fill any missing or illegal orders with HOLD
     assigned = {o.split()[1] for o in orders}
@@ -590,7 +578,6 @@ def main():
             "messages": [m.message for m in phase_data.messages.values()]
         })
         print("Processed", phase_data.name)
-        time.sleep(0.05)
 
     # 4) Save results
     OUTPUT_FILE.write_text(json.dumps(to_saved_game_format(game), indent=2))
