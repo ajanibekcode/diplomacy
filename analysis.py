@@ -4,10 +4,10 @@ import pandas as pd
 import re
 
 # Load your data
-with open('game_stateID3.json') as f:
+with open('final_game_state.json') as f:
     game_state = json.load(f)
 
-with open('dialogue_logID3.json') as f:
+with open('final_dialogue_log.json') as f:
     dialogue_log = json.load(f)
 
 # Helper function to extract support orders
