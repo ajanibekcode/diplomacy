@@ -23,9 +23,9 @@ MODEL_BY_POWER = {
     "RUSSIA": "phi4",
     "TURKEY": "starling-lm:7b-alpha",
 } 
-OUTPUT_FILE  = Path("normal_game_state.json")
-DIALOGUE_FILE = Path("normal_dialogue_log.json")
-MAX_YEAR = 1912
+OUTPUT_FILE  = Path("test_normal_game_state.json")
+DIALOGUE_FILE = Path("test_normal_dialogue_log.json")
+MAX_YEAR = 1903
 DIALOGUE_LOG: list[dict] = []
 PHASE_MESSAGES = {}
 
@@ -185,26 +185,35 @@ def filter_to_legal(game: Game, power: str, orders: list[str]) -> list[str]:
 # --------------------------------------------------------------------------- #
 #  Thin wrapper around `ollama run` so we can add --system the first time     #
 # --------------------------------------------------------------------------- #
+CHAT_MODELS = {"deepseek-r1:14b"}
+
 def run_ollama(model: str,
                prompt: str,
                system: Optional[str] = None,
                *,
                max_tokens: int = 256) -> str:
-    """
-    Send <prompt> to the Ollama daemon and return the raw text response.
-    Requires `ollama serve` to be running on localhost:11434.
-    """
-    payload = {
-        "model":   model,
-        "prompt":  prompt,
-        "system":  system or "",
-        "stream":  False,
-        "format": "json",
-        "options": {"num_predict": max_tokens
-                }
-    }
-    print(f"[REQ]  POST /api/generate  model={model}  "
-          f"prompt_tokens≈{len(prompt.split())}")
+    # if this is one of the chat models, wrap system+user
+    if model in CHAT_MODELS:
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system or ""},
+                {"role": "user",   "content": prompt}
+            ],
+            "stream": False,
+            "format": "json",
+            "options": {"num_predict": max_tokens}
+        }
+    else:
+        payload = {
+            "model": model,
+            "system": system or "",
+            "prompt": prompt,
+            "stream": False,
+            "format": "json",
+            "options": {"num_predict": max_tokens}
+        }
+    print(f"[REQ] POST /api/generate model={model} prompt_tokens≈{len(prompt.split())}")
     return _ollama_call(payload)
 
 # --------------------------------------------------------------------------- #
@@ -407,40 +416,132 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
 
     prompt = (
         f"You are {power}. Phase {game.get_current_phase()}.\n"
-        "Return ONE JSON array with exactly one legal order per unit.\n"
-        "Legal orders:\n" + json.dumps(legal_flat)
+        "Return ONLY a valid JSON array of orders, e.g.:\n"
+        "[\"A PAR - BUR\", \"F LON H\"]\n\n"
+        "You MUST use square brackets and quote each order string.\n"
+        "Format: [\"order1\", \"order2\", ...]\n\n"
+        "No explanation, no extra text, no object keys.\n\n"
+        "Choose from these legal orders:\n" + json.dumps(legal_flat)
     )
 
     output = run_ollama(model, prompt, system_text)
 
-    # Parse first JSON array in the response
-    m = re.search(r"\[[^\]]*\]", output, re.S)
-    if m:
-        try:
-            raw_orders = json.loads(output)
-        except json.JSONDecodeError:
-            raw_orders = []
-    else:
-        raw_orders = []
+    print(f"\n==== [{power}] — PHASE {game.get_current_phase()} ====")
+    print("Raw model output:\n", output)
 
-    # Keep only legal strings
-    orders_raw = _to_string_orders(raw_orders)
+    # Extract all possible orders from the response
+    extracted_orders = []
+    
+    # Pattern to match valid orders - more lenient to catch variations
+    order_pattern = r'["\']?(A|F)\s+[A-Z]{3}(\s*-\s*[A-Z]{3}|\s+[HSRDC]|\s+S\s+[AF]\s+[A-Z]{3}(\s*-\s*[A-Z]{3})?)["\']?'
+    
+    # First try to parse as JSON
+    try:
+        # Try direct JSON parsing
+        parsed = json.loads(output.strip())
+        
+        # Function to recursively extract orders from any nested structure
+        def extract_from_structure(item):
+            orders = []
+            if isinstance(item, str):
+                # Check if string matches order pattern
+                if re.match(order_pattern, item.strip()):
+                    orders.append(item.strip())
+            elif isinstance(item, list):
+                # Extract from each list item
+                for subitem in item:
+                    orders.extend(extract_from_structure(subitem))
+            elif isinstance(item, dict):
+                # Extract from both keys and values
+                for key, value in item.items():
+                    # Check if key is an order
+                    if isinstance(key, str) and re.match(order_pattern, key.strip()):
+                        orders.append(key.strip())
+                    # Check value too
+                    orders.extend(extract_from_structure(value))
+            return orders
+        
+        extracted_orders = extract_from_structure(parsed)
+        
+        if extracted_orders:
+            print(f"[{power}] Extracted orders from parsed JSON structure: {extracted_orders}")
+        
+    except json.JSONDecodeError:
+        # If not valid JSON, try regex extraction
+        pass
+    
+    # If no orders extracted from JSON structure, try regex patterns
+    if not extracted_orders:
+        # Look for JSON arrays with regex
+        array_match = re.search(r'\[(.*?)\]', output, re.DOTALL)
+        if array_match:
+            array_content = array_match.group(1)
+            try:
+                # Try to parse the extracted array
+                array_items = json.loads('[' + array_content + ']')
+                for item in array_items:
+                    if isinstance(item, str) and re.match(order_pattern, item.strip()):
+                        extracted_orders.append(item.strip())
+            except json.JSONDecodeError:
+                # If array JSON parsing fails, extract with regex
+                pass
+    
+    # Last resort: direct regex matching of order patterns in the raw output
+    if not extracted_orders:
+        # Find all matches of the order pattern
+        matches = re.findall(order_pattern, output)
+        if matches:
+            # Extract the full text of each match
+            full_matches = []
+            for match_tuple in matches:
+                # Find the original match in the text
+                start_idx = 0
+                while True:
+                    unit_type = match_tuple[0]  # A or F
+                    potential_start = output.find(unit_type, start_idx)
+                    if potential_start == -1:
+                        break
+                    
+                    # Extract a generous window around the match
+                    window = output[potential_start:potential_start+30]
+                    if re.match(order_pattern, window):
+                        # Clean up the order text
+                        order = re.match(order_pattern, window).group(0)
+                        order = order.strip().strip('"\'')
+                        full_matches.append(order)
+                        break
+                    
+                    start_idx = potential_start + 1
+            
+            extracted_orders.extend(full_matches)
+            print(f"[{power}] Extracted orders with pattern matching: {extracted_orders}")
+    
+    # Normalize and deduplicate orders
+    orders_raw = []
+    for order in extracted_orders:
+        # Clean up formatting issues
+        clean_order = order.strip().strip('"\'')
+        # Remove duplicate whitespace
+        clean_order = re.sub(r'\s+', ' ', clean_order)
+        if clean_order not in orders_raw:
+            orders_raw.append(clean_order)
+    
+    print(f"[{power}] Parsed orders from model: {orders_raw}")
+
+    # Filter to only legal orders
     orders = filter_to_legal(game, power, orders_raw)
-
-    # Back‑fill any missing or illegal orders with HOLD
+    print(f"[{power}] Filtered legal orders: {orders}")
+    
+    # Back-fill any missing or illegal orders with HOLD
     assigned = {o.split()[1] for o in orders}
-
-    # all_opts maps loc → list of legal orders for that loc
-    all_opts = game.get_all_possible_orders()
-
+    
     for loc in locs:
         if loc not in assigned:
-            # take the first legal order for this loc to infer unit type (A or F)
-            example_order = all_opts[loc][0]    # e.g. "A PAR - BUR"
+            # Get first legal order to infer unit type (A or F)
+            example_order = all_opts[loc][0]
             unit_type = example_order.split()[0]
             orders.append(f"{unit_type} {loc} H")
-
-
+    
     # Log
     DIALOGUE_LOG.append({
         "phase": game.get_current_phase(),
@@ -450,7 +551,7 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
         "response": output,
         "orders": orders
     })
-
+    
     return orders
 
 

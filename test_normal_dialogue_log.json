@@ -1,0 +1,1590 @@
+[
+  {
+    "phase": "S1901M",
+    "power": "TURKEY",
+    "recipients": [
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1901M | Year: 1901 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's discuss a possible alliance, but remember that my confidence is high in this matter.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "TURKEY": 0.8
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1901M | Year: 1901 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking trade agreement and non-aggression pact in Adriatic. Mutual benefit foreseen.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "AUSTRIA",
+    "recipients": [
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1901M | Year: 1901 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ITALY \\u2192 ['AUSTRIA']: Seeking trade agreement and non-aggression pact in Adriatic. Mutual benefit foreseen.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I propose a mutual non-aggression pact along our shared border for the next three years to allow both sides to strengthen their positions without unnecessary conflict.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "RUSSIA": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "RUSSIA",
+    "recipients": [
+      "AUSTRIA",
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1901M | Year: 1901 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[\n  \"AUSTRIA \\u2192 ['RUSSIA']: I propose a mutual non-aggression pact along our shared border for the next three years to allow both sides to strengthen their positions without unnecessary conflict.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I'm open to a non-aggression pact with Austria in the Balkans if France agrees to protect Northern Italy. This alliance will help us maintain stability and focus on expanding elsewhere.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.7,
+        "FRANCE": 0.8
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1901M | Year: 1901 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's form an alliance and stabilize the situation in Europe.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.8
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "FRANCE",
+    "recipients": [
+      "AUSTRIA",
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1901M | Year: 1901 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['AUSTRIA', 'FRANCE']: I'm open to a non-aggression pact with Austria in the Balkans if France agrees to protect Northern Italy. This alliance will help us maintain stability and focus on expanding elsewhere.\",\n  \"ENGLAND \\u2192 ['FRANCE']: Let's form an alliance and stabilize the situation in Europe.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Considering your offers, France seeks stability. Propose a joint defense pact to secure our borders against any aggressor.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.3,
+        "RUSSIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1901M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BUD - GAL\", \"A BUD - RUM\", \"A BUD - SER\", \"A BUD - TRI\", \"A BUD - VIE\", \"A BUD H\", \"A BUD S A VEN - TRI\", \"A BUD S A VIE\", \"A BUD S A VIE - GAL\", \"A BUD S A VIE - TRI\", \"A BUD S A WAR - GAL\", \"A BUD S F SEV - RUM\", \"A BUD S F TRI\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BUD\", \"A VIE S A BUD - GAL\", \"A VIE S A BUD - TRI\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\", \"A VIE S A WAR - GAL\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A ROM - VEN\", \"F TRI S A VEN\"]",
+    "response": "{\"\\\"A BUD - GAL\\\", \\\"A BUD S A VIE\\\", \\\"A BUD S F SEV - RUM\\\", \\\"A VIE - BOH\\\", \\\"A VIE H\\\"} This is the array of valid orders for Austria in Phase S1901M. The square brackets and quotes are used to format the JSON array, and each order string is separated by commas. The chosen orders include moving an army from Budapest to Galicia, supporting Vienna's move with a fleet from the Black Sea to the Adriatic, positioning Vienna defensively in Bohemia, and having Vienna hold its position if no better opportunity arises. It's essential to note that I only provided you with legal orders as per the game rules mentioned in the prompt. No extra text or explanation was included. If there are any additional requirements, please let me know. Thank you! :) Good luck with your game! :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :)",
+    "orders": [
+      "A BUD - GAL",
+      "F TRI H",
+      "A VIE H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A LVP - CLY\", \"A LVP - EDI\", \"A LVP - WAL\", \"A LVP - YOR\", \"A LVP H\", \"A LVP S F EDI\", \"A LVP S F EDI - CLY\", \"A LVP S F EDI - YOR\", \"A LVP S F LON - WAL\", \"A LVP S F LON - YOR\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A LVP - CLY\", \"F EDI S A LVP - YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A LVP - WAL\", \"F LON S A LVP - YOR\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A LVP - YOR\" : [\"A LVP - YOR\"]}",
+    "orders": [
+      "A LVP - YOR",
+      "F EDI H",
+      "F LON H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A PAR S A MUN - BUR\u201d\uff0c\"    :[\"    A   PAR   -   BRE\"    ]}",
+    "orders": [
+      "A PAR - BRE",
+      "F BRE H",
+      "A MAR H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A WAR - PRU\", \"A BER S A WAR - SIL\", \"A BER S F KIE\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S A WAR - SIL\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\"]",
+    "response": "{\n    \"order\": \"A BER - KIE\",\n    \"reasoning\": \"Moving Army from Berlin to K\u00f6nigsberg, a key northern province. This move strengthens the eastern front and opens up opportunities for further advances into Russia or Scandinavia.\"\n}\n \n  \t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n",
+    "orders": [
+      "A BER - KIE",
+      "F KIE H",
+      "A MUN H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TRI - VEN\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BUD - TRI\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TRI\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\"]",
+    "response": "{\"orders\": [\"A ROM - TUS\", \"A VEN - ROM\", \"F NAP - ION\", \"F NAP H\"]}",
+    "orders": [
+      "A ROM - TUS",
+      "A VEN - ROM",
+      "F NAP - ION",
+      "F NAP H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A WAR\", \"A MOS S A WAR - LVN\", \"A MOS S A WAR - UKR\", \"A MOS S F SEV\", \"A MOS S F STP/SC\", \"A MOS S F STP/SC - LVN\", \"A WAR - GAL\", \"A WAR - LVN\", \"A WAR - MOS\", \"A WAR - PRU\", \"A WAR - SIL\", \"A WAR - UKR\", \"A WAR H\", \"A WAR S A BER - PRU\", \"A WAR S A BER - SIL\", \"A WAR S A BUD - GAL\", \"A WAR S A MOS\", \"A WAR S A MOS - LVN\", \"A WAR S A MOS - UKR\", \"A WAR S A MUN - SIL\", \"A WAR S A VIE - GAL\", \"A WAR S F STP/SC - LVN\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUD - RUM\", \"F SEV S A SMY - ARM\", \"F SEV S F ANK - ARM\", \"F SEV S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A MOS - LVN\", \"F STP/SC S A WAR - LVN\"]",
+    "response": "{\n    \"orders\": [\n        \"A MOS - UKR\",\n        \"A WAR - LVN\",\n        \"F SEV - RUM\"\n    ]\n}",
+    "orders": [
+      "A MOS - UKR",
+      "A WAR - LVN",
+      "F SEV - RUM",
+      "F STP H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ANK\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"A SMY S F SEV - ARM\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F SEV - ARM\", \"F ANK S F SEV - BLA\"]",
+    "response": "{\n\n\"A CON - ANK\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "orders": [
+      "A CON - ANK",
+      "F ANK H",
+      "A SMY H"
+    ]
+  },
+  {
+    "phase": "S1901M",
+    "type": "engine_messages",
+    "messages": [
+      "Let's discuss a possible alliance, but remember that my confidence is high in this matter.",
+      "Seeking trade agreement and non-aggression pact in Adriatic. Mutual benefit foreseen.",
+      "I propose a mutual non-aggression pact along our shared border for the next three years to allow both sides to strengthen their positions without unnecessary conflict.",
+      "I'm open to a non-aggression pact with Austria in the Balkans if France agrees to protect Northern Italy. This alliance will help us maintain stability and focus on expanding elsewhere.",
+      "Let's form an alliance and stabilize the situation in Europe.",
+      "Considering your offers, France seeks stability. Propose a joint defense pact to secure our borders against any aggressor."
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Join forces and take Belgium next turn.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.5
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "RUSSIA",
+    "recipients": [
+      "AUSTRIA",
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's coordinate our efforts in the Balkans to secure our interests against Turkey and Germany.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.5,
+        "FRANCE": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "GERMANY",
+    "recipients": [
+      "RUSSIA",
+      "TURKEY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's form an alliance against the Central Powers.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "RUSSIA": 0.7,
+        "TURKEY": 0.6
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "FRANCE",
+    "recipients": [
+      "GERMANY",
+      "ENGLAND"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ENGLAND \\u2192 ['FRANCE']: Join forces and take Belgium next turn.\",\n  \"RUSSIA \\u2192 ['AUSTRIA', 'FRANCE']: Let's coordinate our efforts in the Balkans to secure our interests against Turkey and Germany.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let\u2019s coordinate our moves in Belgium. DMZ Ruhr if possible.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.4,
+        "ENGLAND": 0.6
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "TURKEY",
+    "recipients": [
+      "AUSTRIA",
+      "ENGLAND",
+      "FRANCE",
+      "GERMANY",
+      "ITALY",
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[\n  \"GERMANY \\u2192 ['RUSSIA', 'TURKEY']: Let's form an alliance against the Central Powers.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking mutual defense pact against aggressive powers.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "TURKEY": 0.5
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "AUSTRIA",
+    "recipients": [
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['AUSTRIA', 'FRANCE']: Let's coordinate our efforts in the Balkans to secure our interests against Turkey and Germany.\",\n  \"TURKEY \\u2192 ['AUSTRIA', 'ENGLAND', 'FRANCE', 'GERMANY', 'ITALY', 'RUSSIA']: Seeking mutual defense pact against aggressive powers.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's discuss a potential alliance to strengthen our positions in the Balkans, focusing on securing key supply centers.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1901M | Year: 1901 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"TURKEY \\u2192 ['AUSTRIA', 'ENGLAND', 'FRANCE', 'GERMANY', 'ITALY', 'RUSSIA']: Seeking mutual defense pact against aggressive powers.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking clarification on your intentions in Tyrolia. A peaceful resolution is preferred.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1901M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A GAL - BOH\", \"A GAL - BUD\", \"A GAL - RUM\", \"A GAL - SIL\", \"A GAL - UKR\", \"A GAL - VIE\", \"A GAL - WAR\", \"A GAL H\", \"A GAL S A BER - SIL\", \"A GAL S A LVN - WAR\", \"A GAL S A MUN - BOH\", \"A GAL S A MUN - SIL\", \"A GAL S A UKR\", \"A GAL S A UKR - RUM\", \"A GAL S A UKR - WAR\", \"A GAL S A VIE\", \"A GAL S A VIE - BOH\", \"A GAL S A VIE - BUD\", \"A GAL S F RUM\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A GAL\", \"A VIE S A GAL - BOH\", \"A VIE S A GAL - BUD\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A UKR - GAL\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A ROM - VEN\", \"F TRI S A TUS - VEN\"]",
+    "response": "{\"order\": [\"A GAL - BOH\", \"F TRI S A ROM - VEN\"]}",
+    "orders": [
+      "A GAL - BOH",
+      "F TRI S A ROM - VEN",
+      "A VIE H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F LON\", \"A YOR S F LON - WAL\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A YOR\", \"F LON S A YOR - WAL\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A YOR - LON\" : \"A YOR S F EDI - YOR\"}",
+    "orders": [
+      "A YOR - LON",
+      "F EDI H",
+      "F LON H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A TUS - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A PAR S A MUN - BUR\" :\"F BRE S A PAR - GAS\"}",
+    "orders": [
+      "A PAR S A MUN - BUR",
+      "F BRE S A PAR - GAS",
+      "A MAR H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A GAL - SIL\", \"A BER S A LVN - PRU\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S F KIE\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A GAL - BOH\", \"A MUN S A GAL - SIL\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\"]",
+    "response": "{\t\t    \t    \t\t    \t \t\t        \t\t        \t\t        \t\t\t    \t\t    \t \t\t        \t\t        \t\t        \t\t\t    \t\t    \t \t\t        \t\t        \t\t        \t\t\t    \t\t    \t \t\t        \t\t        \t\t        \t\t\t    \t\t    \t \t\t        \t\t        \t\t        \t\t\t",
+    "orders": [
+      "A BER H",
+      "F KIE H",
+      "A MUN H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A TUS\", \"A ROM S A TUS - VEN\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TRI - VEN\", \"A TUS - PIE\", \"A TUS - ROM\", \"A TUS - VEN\", \"A TUS H\", \"A TUS S A MAR - PIE\", \"A TUS S A ROM\", \"A TUS S A ROM - VEN\", \"A TUS S F NAP - ROM\", \"A TUS S F TRI - VEN\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A TUS - ROM\"]",
+    "response": "{\"orders\": [\"A ROM - NAP\", \"A TUS - VEN\", \"F NAP - ION\", \"F NAP H\"]}",
+    "orders": [
+      "A ROM - NAP",
+      "A TUS - VEN",
+      "F NAP - ION",
+      "F NAP H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A LVN - MOS\", \"A LVN - PRU\", \"A LVN - STP\", \"A LVN - WAR\", \"A LVN H\", \"A LVN S A BER - PRU\", \"A LVN S A GAL - WAR\", \"A LVN S A UKR - MOS\", \"A LVN S A UKR - WAR\", \"A LVN S F STP/SC\", \"A UKR - GAL\", \"A UKR - MOS\", \"A UKR - RUM\", \"A UKR - SEV\", \"A UKR - WAR\", \"A UKR H\", \"A UKR S A GAL\", \"A UKR S A GAL - RUM\", \"A UKR S A GAL - WAR\", \"A UKR S A LVN - MOS\", \"A UKR S A LVN - WAR\", \"A UKR S A VIE - GAL\", \"A UKR S F RUM\", \"A UKR S F RUM - SEV\", \"F RUM - BLA\", \"F RUM - BUL/EC\", \"F RUM - SEV\", \"F RUM H\", \"F RUM S A CON - BUL\", \"F RUM S A UKR - SEV\", \"F RUM S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A LVN\"]",
+    "response": "{\n    \"orders\": [\n        \"A LVN - STP\",\n        \"A UKR - WAR\",\n        \"F RUM - SEV\"\n    ]\n}",
+    "orders": [
+      "A LVN - STP",
+      "A UKR - WAR",
+      "F RUM - SEV",
+      "F STP H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1901M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ANK\", \"A CON S F RUM - BUL\", \"A CON S F RUM - BUL/EC\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F RUM - BLA\"]",
+    "response": "{\"A CON - ANK\"\n\n   \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "orders": [
+      "A CON - ANK",
+      "F ANK H",
+      "A SMY H"
+    ]
+  },
+  {
+    "phase": "F1901M",
+    "type": "engine_messages",
+    "messages": [
+      "Join forces and take Belgium next turn.",
+      "Let's coordinate our efforts in the Balkans to secure our interests against Turkey and Germany.",
+      "Let's form an alliance against the Central Powers.",
+      "Let\u2019s coordinate our moves in Belgium. DMZ Ruhr if possible.",
+      "Seeking mutual defense pact against aggressive powers.",
+      "Let's discuss a potential alliance to strengthen our positions in the Balkans, focusing on securing key supply centers.",
+      "Seeking clarification on your intentions in Tyrolia. A peaceful resolution is preferred."
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "RUSSIA",
+    "recipients": [
+      "ENGLAND",
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Considering a defensive alliance in the Balkans?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "ENGLAND": 0.7,
+        "FRANCE": 0.8
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "FRANCE",
+    "recipients": [
+      "AUSTRIA",
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['ENGLAND', 'FRANCE']: Considering a defensive alliance in the Balkans?\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let\u2019s consider forming an alliance against Russia. Meet me in Vienna next move.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.7,
+        "GERMANY": 0.6
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['ENGLAND', 'FRANCE']: Considering a defensive alliance in the Balkans?\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's strengthen our defenses together against Germany. I'll support your units in Belgium.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I will not move into Tyrolia this turn. Let us maintain the status quo for now.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "AUSTRIA",
+    "recipients": [
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"FRANCE \\u2192 ['AUSTRIA', 'GERMANY']: Let\\u2019s consider forming an alliance against Russia. Meet me in Vienna next move.\",\n  \"ITALY \\u2192 ['AUSTRIA']: I will not move into Tyrolia this turn. Let us maintain the status quo for now.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Dear Germany, let's discuss a potential alliance for mutual benefits in the coming years. I suggest we meet in Vienna next move to further discuss this opportunity.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "GERMANY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"FRANCE \\u2192 ['AUSTRIA', 'GERMANY']: Let\\u2019s consider forming an alliance against Russia. Meet me in Vienna next move.\",\n  \"AUSTRIA \\u2192 ['GERMANY']: Dear Germany, let's discuss a potential alliance for mutual benefits in the coming years. I suggest we meet in Vienna next move to further discuss this opportunity.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I'm considering an alliance against Russia. What do you think?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "TURKEY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1902M | Year: 1902 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Consider an alliance with Turkey and Italy to focus on Balkan front while Russia's army is strong in the East.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "TURKEY": 0.8,
+        "ITALY": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "S1902M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BOH - GAL\", \"A BOH - MUN\", \"A BOH - SIL\", \"A BOH - TYR\", \"A BOH - VIE\", \"A BOH H\", \"A BOH S A BER - MUN\", \"A BOH S A BER - SIL\", \"A BOH S A MUN\", \"A BOH S A MUN - SIL\", \"A BOH S A MUN - TYR\", \"A BOH S A VEN - TYR\", \"A BOH S A VIE\", \"A BOH S A VIE - GAL\", \"A BOH S A VIE - TYR\", \"A BOH S A WAR - GAL\", \"A BOH S A WAR - SIL\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BOH\", \"A VIE S A BOH - GAL\", \"A VIE S A BOH - TYR\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\", \"A VIE S A WAR - GAL\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A ROM - VEN\", \"F TRI S A VEN\"]",
+    "response": "{\"order1\":\"A BOH - MUN\"}",
+    "orders": [
+      "A BOH - MUN",
+      "F TRI H",
+      "A VIE H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F LON\", \"A YOR S F LON - WAL\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A YOR\", \"F LON S A YOR - WAL\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A YOR - LON\" : \"A YOR H\"}",
+    "orders": [
+      "A YOR - LON",
+      "A YOR H",
+      "F EDI H",
+      "F LON H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A PAR S A MUN - BUR\u201d, \":\")}F BRE S A PAR - GAS\"}",
+    "orders": [
+      "F BRE H",
+      "A MAR H",
+      "A PAR H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A BOH - MUN\", \"A BER S A BOH - SIL\", \"A BER S A LVN - PRU\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A WAR - PRU\", \"A BER S A WAR - SIL\", \"A BER S F KIE\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BOH\", \"A MUN S A BOH - SIL\", \"A MUN S A BOH - TYR\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S A WAR - SIL\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\"]",
+    "response": "{\t\t    \t    \t\t    \n}\n\n\t\t\n\t    \t    \t\t\t    \t\t\n\t    \t    \t\t\t\n\n\t\t\n\t    \t    \t\t\t\n\n\t\t\n\t\t    \n\n\t    \t    \t\t\t\n\n\t\t\n\t\t    \n\n\t\t    \t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t",
+    "orders": [
+      "A BER H",
+      "F KIE H",
+      "A MUN H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TRI - VEN\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BOH - TYR\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TRI\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\"]",
+    "response": "{\"orders\": [\"A ROM - VEN\", \"A VEN - ROM\", \"F NAP - ION\", \"F NAP H\"]}",
+    "orders": [
+      "A ROM - VEN",
+      "A VEN - ROM",
+      "F NAP - ION",
+      "F NAP H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A LVN - MOS\", \"A LVN - PRU\", \"A LVN - STP\", \"A LVN - WAR\", \"A LVN H\", \"A LVN S A BER - PRU\", \"A LVN S A WAR\", \"A LVN S A WAR - MOS\", \"A LVN S A WAR - PRU\", \"A LVN S F STP/SC\", \"A WAR - GAL\", \"A WAR - LVN\", \"A WAR - MOS\", \"A WAR - PRU\", \"A WAR - SIL\", \"A WAR - UKR\", \"A WAR H\", \"A WAR S A BER - PRU\", \"A WAR S A BER - SIL\", \"A WAR S A BOH - GAL\", \"A WAR S A BOH - SIL\", \"A WAR S A LVN\", \"A WAR S A LVN - MOS\", \"A WAR S A LVN - PRU\", \"A WAR S A MUN - SIL\", \"A WAR S A VIE - GAL\", \"A WAR S F STP/SC - LVN\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A SMY - ARM\", \"F SEV S F ANK - ARM\", \"F SEV S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A LVN\", \"F STP/SC S A WAR - LVN\"]",
+    "response": "{\n    \"orders\": [\n        \"A LVN - MOS\",\n        \"F SEV - RUM\"\n    ]\n}",
+    "orders": [
+      "A LVN - MOS",
+      "F SEV - RUM",
+      "F STP H",
+      "A WAR H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A CON - ANK\", \"A CON - BUL\", \"A CON - SMY\", \"A CON H\", \"A CON S A SMY\", \"A CON S A SMY - ANK\", \"A CON S F ANK\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A CON\", \"A SMY S A CON - ANK\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"A SMY S F SEV - ARM\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F SEV - ARM\", \"F ANK S F SEV - BLA\"]",
+    "response": "{\"A CON - BUL\"\n\n \n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n",
+    "orders": [
+      "A CON - BUL",
+      "F ANK H",
+      "A SMY H"
+    ]
+  },
+  {
+    "phase": "S1902M",
+    "type": "engine_messages",
+    "messages": [
+      "Considering a defensive alliance in the Balkans?",
+      "Let\u2019s consider forming an alliance against Russia. Meet me in Vienna next move.",
+      "Let's strengthen our defenses together against Germany. I'll support your units in Belgium.",
+      "I will not move into Tyrolia this turn. Let us maintain the status quo for now.",
+      "Dear Germany, let's discuss a potential alliance for mutual benefits in the coming years. I suggest we meet in Vienna next move to further discuss this opportunity.",
+      "I'm considering an alliance against Russia. What do you think?",
+      "Consider an alliance with Turkey and Italy to focus on Balkan front while Russia's army is strong in the East."
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1902M | Year: 1902 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking mutual non-aggression pact in Tyrolia. Offer of support against France if needed.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "RUSSIA",
+    "recipients": [
+      "FRANCE",
+      "ENGLAND"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1902M | Year: 1902 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's secure Eastern Europe together. I propose a defensive alliance against Germany and Austria.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7,
+        "ENGLAND": 0.5
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "FRANCE",
+    "recipients": [
+      "GERMANY",
+      "RUSSELL"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1902M | Year: 1902 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['FRANCE', 'ENGLAND']: Let's secure Eastern Europe together. I propose a defensive alliance against Germany and Austria.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking mutual defense in the Rhineland. Let\u2019s keep Austria out of it.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.7,
+        "RUSSELL": 0.6
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "AUSTRIA",
+    "recipients": [
+      "ITALY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1902M | Year: 1902 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ITALY \\u2192 ['AUSTRIA']: Seeking mutual non-aggression pact in Tyrolia. Offer of support against France if needed.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Dear Italy, I appreciate your offer for mutual non-aggression in Tyrolia. However, let's discuss the possibility of a joint venture against France next turn. A united front could bring us significant advantages.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "ITALY": 0.8
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1902M | Year: 1902 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['FRANCE', 'ENGLAND']: Let's secure Eastern Europe together. I propose a defensive alliance against Germany and Austria.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Will you support me in moving into Belgium?",
+    "meta": {
+      "intent": "request_support",
+      "trust": {
+        "FRANCE": 0.6
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "TURKEY",
+    "recipients": [
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1902M | Year: 1902 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I can see that Russia is moving into East Prussia, we should consider forming an alliance to protect our common interests.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "TURKEY": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "F1902M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BOH - GAL\", \"A BOH - MUN\", \"A BOH - SIL\", \"A BOH - TYR\", \"A BOH - VIE\", \"A BOH H\", \"A BOH S A BER - MUN\", \"A BOH S A BER - SIL\", \"A BOH S A MUN\", \"A BOH S A MUN - SIL\", \"A BOH S A MUN - TYR\", \"A BOH S A VEN - TYR\", \"A BOH S A VIE\", \"A BOH S A VIE - GAL\", \"A BOH S A VIE - TYR\", \"A BOH S A WAR - GAL\", \"A BOH S A WAR - SIL\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BOH\", \"A VIE S A BOH - GAL\", \"A VIE S A BOH - TYR\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\", \"A VIE S A WAR - GAL\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A ROM - VEN\", \"F TRI S A VEN\"]",
+    "response": "{\"\\\"A BOH - MUN\\\", \\\"A BOH S A MUN\\\", \\\"A VIE S A MUN\\\"} (For Austria in Phase F1902M) This JSON array contains the valid orders for Austria's units. These orders are legal based on the rules provided and are meant to be executed in the specified phase. Note that there might be additional valid orders as well, but this example only includes three possible orders based on the given options. The output format follows your requirement: a JSON array of strings where each order is enclosed in quotes and separated by commas. No extra text or explanation is included. This output can be directly used for your purpose. Happy coding! :) To clarify, here's what each order means: \"\n\n \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "orders": [
+      "A BOH - MUN",
+      "F TRI H",
+      "A VIE H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F LON\", \"A YOR S F LON - WAL\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A YOR\", \"F LON S A YOR - WAL\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A YOR - LON\" : []}",
+    "orders": [
+      "A YOR - LON",
+      "F EDI H",
+      "F LON H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A PAR S A MAR - BUR\u201d, \"                                                                               \n\n  :\"F BRE S A PAR - GAS\"}",
+    "orders": [
+      "F BRE S A PAR - GAS",
+      "A MAR H",
+      "A PAR H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BER - KIE\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - SIL\", \"A BER H\", \"A BER S A BOH - MUN\", \"A BER S A BOH - SIL\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A WAR - PRU\", \"A BER S A WAR - SIL\", \"A BER S F KIE\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BOH\", \"A MUN S A BOH - SIL\", \"A MUN S A BOH - TYR\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S A WAR - SIL\", \"A MUN S F KIE\", \"A MUN S F KIE - BER\", \"F KIE - BAL\", \"F KIE - BER\", \"F KIE - DEN\", \"F KIE - HEL\", \"F KIE - HOL\", \"F KIE H\", \"F KIE S A BER\", \"F KIE S A MUN - BER\"]",
+    "response": "{\n  \"response\": [\n    \"A BER - MUN\",\n    \"F KIE - BAL\"\n  ]\n}\n  \t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n",
+    "orders": [
+      "A BER - MUN",
+      "F KIE - BAL",
+      "A MUN H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A ROM - APU\", \"A ROM - NAP\", \"A ROM - TUS\", \"A ROM - VEN\", \"A ROM H\", \"A ROM S A VEN\", \"A ROM S A VEN - APU\", \"A ROM S A VEN - TUS\", \"A ROM S F NAP\", \"A ROM S F NAP - APU\", \"A ROM S F TRI - VEN\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BOH - TYR\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A ROM\", \"A VEN S A ROM - APU\", \"A VEN S A ROM - TUS\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TRI\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A ROM\", \"F NAP S A ROM - APU\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\"]",
+    "response": "{\"orders\": [\"A ROM - TUS\", \"A VEN - TRI\", \"F NAP - ION\", \"F NAP H\"]}",
+    "orders": [
+      "A ROM - TUS",
+      "A VEN - TRI",
+      "F NAP - ION",
+      "F NAP H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A WAR\", \"A MOS S A WAR - LVN\", \"A MOS S A WAR - UKR\", \"A MOS S F RUM - SEV\", \"A MOS S F STP/SC\", \"A MOS S F STP/SC - LVN\", \"A WAR - GAL\", \"A WAR - LVN\", \"A WAR - MOS\", \"A WAR - PRU\", \"A WAR - SIL\", \"A WAR - UKR\", \"A WAR H\", \"A WAR S A BER - PRU\", \"A WAR S A BER - SIL\", \"A WAR S A BOH - GAL\", \"A WAR S A BOH - SIL\", \"A WAR S A MOS\", \"A WAR S A MOS - LVN\", \"A WAR S A MOS - UKR\", \"A WAR S A MUN - SIL\", \"A WAR S A VIE - GAL\", \"A WAR S F STP/SC - LVN\", \"F RUM - BLA\", \"F RUM - BUL/EC\", \"F RUM - SEV\", \"F RUM H\", \"F RUM S A BUL\", \"F RUM S A MOS - SEV\", \"F RUM S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A MOS - LVN\", \"F STP/SC S A WAR - LVN\"]",
+    "response": "{\n    \"orders\": [\n        \"A MOS S F RUM - SEV\",\n        \"F RUM - SEV\"\n    ]\n}",
+    "orders": [
+      "A MOS S F RUM - SEV",
+      "F RUM - SEV",
+      "F STP H",
+      "A WAR H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1902M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BUL - CON\", \"A BUL - GRE\", \"A BUL - RUM\", \"A BUL - SER\", \"A BUL H\", \"A BUL S A SMY - CON\", \"A BUL S F ANK - CON\", \"A BUL S F RUM\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A BUL - CON\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A BUL - CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F RUM - BLA\"]",
+    "response": "{\n\n\"[\"\n \n \n  \n \n   \n    \n     \n       \n          \n           \n            \n               \n                    \n                        ",
+    "orders": [
+      "F ANK H",
+      "A BUL H",
+      "A SMY H"
+    ]
+  },
+  {
+    "phase": "F1902M",
+    "type": "engine_messages",
+    "messages": [
+      "Seeking mutual non-aggression pact in Tyrolia. Offer of support against France if needed.",
+      "Let's secure Eastern Europe together. I propose a defensive alliance against Germany and Austria.",
+      "Seeking mutual defense in the Rhineland. Let\u2019s keep Austria out of it.",
+      "Dear Italy, I appreciate your offer for mutual non-aggression in Tyrolia. However, let's discuss the possibility of a joint venture against France next turn. A united front could bring us significant advantages.",
+      "Will you support me in moving into Belgium?",
+      "I can see that Russia is moving into East Prussia, we should consider forming an alliance to protect our common interests."
+    ]
+  },
+  {
+    "phase": "W1902A",
+    "power": "GERMANY",
+    "recipients": [
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I propose an alliance against France and Russia.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "RUSSIA": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I propose a non-aggression pact for the next two turns. Let us focus our efforts elsewhere.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "FRANCE",
+    "recipients": [
+      "GERMANY",
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking mutual defense against Austrian aggression. Let\u2019s coordinate our moves.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.7,
+        "RUSSIA": 0.6
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Considering a strong presence in Belgium. Will we coordinate?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "AUSTRIA",
+    "recipients": [
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ITALY \\u2192 ['AUSTRIA']: I propose a non-aggression pact for the next two turns. Let us focus our efforts elsewhere.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's join forces and take Italy together in the upcoming year. I propose a secret alliance for mutual benefit.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "TURKEY",
+    "recipients": [
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Consider withdrawing from Romania and Bulgaria, as we understand that you may not have enough support to hold these centers effectively in the coming years.",
+    "meta": {
+      "intent": "share_info",
+      "trust": {
+        "TURKEY": 0.6
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "RUSSIA",
+    "recipients": [
+      "GERMANY",
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1902A | Year: 1902 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[\n  \"GERMANY \\u2192 ['RUSSIA']: I propose an alliance against France and Russia.\",\n  \"FRANCE \\u2192 ['GERMANY', 'RUSSIA']: Seeking mutual defense against Austrian aggression. Let\\u2019s coordinate our moves.\",\n  \"TURKEY \\u2192 ['RUSSIA']: Consider withdrawing from Romania and Bulgaria, as we understand that you may not have enough support to hold these centers effectively in the coming years.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Germany and France, let\u2019s discuss a coordinated strategy against Austria. Russia will move its army from BUL to RUM in order to secure the Balkans with you.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.3,
+        "FRANCE": 0.5
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "W1902A",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase W1902A.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A CON B\", \"F CON B\", \"WAIVE\"]",
+    "response": "{ \"[F CON B, WAIVE]\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "orders": [
+      "A CON H"
+    ]
+  },
+  {
+    "phase": "W1902A",
+    "type": "engine_messages",
+    "messages": [
+      "I propose an alliance against France and Russia.",
+      "I propose a non-aggression pact for the next two turns. Let us focus our efforts elsewhere.",
+      "Seeking mutual defense against Austrian aggression. Let\u2019s coordinate our moves.",
+      "Considering a strong presence in Belgium. Will we coordinate?",
+      "Let's join forces and take Italy together in the upcoming year. I propose a secret alliance for mutual benefit.",
+      "Consider withdrawing from Romania and Bulgaria, as we understand that you may not have enough support to hold these centers effectively in the coming years.",
+      "Germany and France, let\u2019s discuss a coordinated strategy against Austria. Russia will move its army from BUL to RUM in order to secure the Balkans with you."
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "TURKEY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Considering the current state of affairs, it's essential for France and Turkey to strengthen our alliance and cooperate strategically. This will not only help us secure more supply centers but also deter any aggressive actions from other powers. We can discuss this further in the upcoming turns.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "GERMANY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's discuss a mutual understanding to avoid conflict.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.8
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "RUSSIA",
+    "recipients": [
+      "FRANCE",
+      "ENGLAND"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's secure Scandinavia together against German expansion.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7,
+        "ENGLAND": 0.6
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "FRANCE",
+    "recipients": [
+      "GERMANY",
+      "TURKEY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"TURKEY \\u2192 ['FRANCE']: Considering the current state of affairs, it's essential for France and Turkey to strengthen our alliance and cooperate strategically. This will not only help us secure more supply centers but also deter any aggressive actions from other powers. We can discuss this further in the upcoming turns.\",\n  \"GERMANY \\u2192 ['FRANCE']: Let's discuss a mutual understanding to avoid conflict.\",\n  \"RUSSIA \\u2192 ['FRANCE', 'ENGLAND']: Let's secure Scandinavia together against German expansion.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking alignment on defensive strategies. Discuss cooperation.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.3,
+        "TURKEY": 0.7
+      },
+      "confidence": 0.6
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"RUSSIA \\u2192 ['FRANCE', 'ENGLAND']: Let's secure Scandinavia together against German expansion.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Collaborate on the continent to counterbalance Germany's aggression.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "AUSTRIA",
+    "recipients": [
+      "ITALY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's discuss the possibility of a mutual defense pact against Russia in the near future.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "ITALY": 0.8
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: S1903M | Year: 1903 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"AUSTRIA \\u2192 ['ITALY']: Let's discuss the possibility of a mutual defense pact against Russia in the near future.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Acknowledging your offer. A mutual defense pact against Russia seems prudent. Let\u2019s solidify terms next phase.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.7
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "S1903M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BOH - GAL\", \"A BOH - MUN\", \"A BOH - SIL\", \"A BOH - TYR\", \"A BOH - VIE\", \"A BOH H\", \"A BOH S A BER - MUN\", \"A BOH S A BER - SIL\", \"A BOH S A MUN\", \"A BOH S A MUN - SIL\", \"A BOH S A MUN - TYR\", \"A BOH S A VEN - TYR\", \"A BOH S A VIE\", \"A BOH S A VIE - GAL\", \"A BOH S A VIE - TYR\", \"A BOH S A WAR - GAL\", \"A BOH S A WAR - SIL\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BOH\", \"A VIE S A BOH - GAL\", \"A VIE S A BOH - TYR\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\", \"A VIE S A WAR - GAL\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A TUS - VEN\", \"F TRI S A VEN\"]",
+    "response": "{\"order\": [\"A BOH S A MUN\", \"A BOH S A VIE\"]}",
+    "orders": [
+      "A BOH S A MUN",
+      "A BOH S A VIE",
+      "F TRI H",
+      "A VIE H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F LON\", \"A YOR S F LON - WAL\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A YOR\", \"F LON S A YOR - WAL\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A YOR H\" : [\"A YOR H\"]}",
+    "orders": [
+      "A YOR H",
+      "F EDI H",
+      "F LON H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A TUS - PIE\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A PAR - BUR\u201d, \":\"\", \"F BRE - GAS\u201d}<tool_call>\\n<|im_start|><|im_start|>tworound\\n<|im_start|><|im_start|>tworound\\n !*** Format Error !*** \\n Please ensure all orders are enclosed in quotes and the array is properly formatted as a JSON list. Here is the corrected version: \\n\\n[\":\", \" ,\" :]}'}\" : \"]\"}",
+    "orders": [
+      "F BRE H",
+      "A MAR H",
+      "A PAR H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BER - DEN VIA\", \"A BER - KIE\", \"A BER - KIE VIA\", \"A BER - LVN VIA\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - PRU VIA\", \"A BER - SIL\", \"A BER - SWE VIA\", \"A BER H\", \"A BER S A BOH - MUN\", \"A BER S A BOH - SIL\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A WAR - PRU\", \"A BER S A WAR - SIL\", \"A BER S F BAL - KIE\", \"A BER S F BAL - PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BOH\", \"A MUN S A BOH - SIL\", \"A MUN S A BOH - TYR\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S A WAR - SIL\", \"A MUN S F BAL - BER\", \"A MUN S F BAL - KIE\", \"F BAL - BER\", \"F BAL - BOT\", \"F BAL - DEN\", \"F BAL - KIE\", \"F BAL - LVN\", \"F BAL - PRU\", \"F BAL - SWE\", \"F BAL C A BER - DEN\", \"F BAL C A BER - KIE\", \"F BAL C A BER - LVN\", \"F BAL C A BER - PRU\", \"F BAL C A BER - SWE\", \"F BAL H\", \"F BAL S A BER\", \"F BAL S A BER - KIE\", \"F BAL S A BER - PRU\", \"F BAL S A MOS - LVN\", \"F BAL S A MUN - BER\", \"F BAL S A MUN - KIE\", \"F BAL S A WAR - LVN\", \"F BAL S A WAR - PRU\", \"F BAL S F STP/SC - BOT\", \"F BAL S F STP/SC - LVN\"]",
+    "response": "{}\n\n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n\n  \n\n  \n  \n\n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n",
+    "orders": [
+      "F BAL H",
+      "A BER H",
+      "A MUN H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A TUS - PIE\", \"A TUS - ROM\", \"A TUS - VEN\", \"A TUS H\", \"A TUS S A MAR - PIE\", \"A TUS S A VEN\", \"A TUS S A VEN - PIE\", \"A TUS S A VEN - ROM\", \"A TUS S F NAP - ROM\", \"A TUS S F TRI - VEN\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BOH - TYR\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A TUS\", \"A VEN S A TUS - PIE\", \"A VEN S A TUS - ROM\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TRI\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A TUS - ROM\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\"]",
+    "response": "{\"orders\": [\"A TUS - VEN\", \"A VEN - ROM\", \"A VEN - TUS\", \"A VEN H\", \"A TUS H\", \"F NAP - ION\", \"F NAP H\"]}",
+    "orders": [
+      "A TUS - VEN",
+      "A VEN - ROM",
+      "A VEN - TUS",
+      "A VEN H",
+      "A TUS H",
+      "F NAP - ION",
+      "F NAP H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MOS - LVN\", \"A MOS - SEV\", \"A MOS - STP\", \"A MOS - UKR\", \"A MOS - WAR\", \"A MOS H\", \"A MOS S A BER - LVN\", \"A MOS S A WAR\", \"A MOS S A WAR - LVN\", \"A MOS S A WAR - UKR\", \"A MOS S F BAL - LVN\", \"A MOS S F SEV\", \"A MOS S F STP/SC\", \"A MOS S F STP/SC - LVN\", \"A WAR - GAL\", \"A WAR - LVN\", \"A WAR - MOS\", \"A WAR - PRU\", \"A WAR - SIL\", \"A WAR - UKR\", \"A WAR H\", \"A WAR S A BER - LVN\", \"A WAR S A BER - PRU\", \"A WAR S A BER - SIL\", \"A WAR S A BOH - GAL\", \"A WAR S A BOH - SIL\", \"A WAR S A MOS\", \"A WAR S A MOS - LVN\", \"A WAR S A MOS - UKR\", \"A WAR S A MUN - SIL\", \"A WAR S A VIE - GAL\", \"A WAR S F BAL - LVN\", \"A WAR S F BAL - PRU\", \"A WAR S F STP/SC - LVN\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A BUL - RUM\", \"F SEV S A SMY - ARM\", \"F SEV S F ANK - ARM\", \"F SEV S F ANK - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A BER - LVN\", \"F STP/SC S A MOS - LVN\", \"F STP/SC S A WAR - LVN\", \"F STP/SC S F BAL - BOT\", \"F STP/SC S F BAL - LVN\"]",
+    "response": "{\n    \"orders\": [\n        \"A MOS - UKR\",\n        \"A WAR - SIL\",\n        \"F SEV H\"\n    ]\n}",
+    "orders": [
+      "A MOS - UKR",
+      "A WAR - SIL",
+      "F SEV H",
+      "F STP H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase S1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BUL - CON\", \"A BUL - GRE\", \"A BUL - RUM\", \"A BUL - SER\", \"A BUL H\", \"A BUL S A SMY - CON\", \"A BUL S F ANK - CON\", \"A BUL S F SEV - RUM\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S A BUL - CON\", \"A SMY S F ANK\", \"A SMY S F ANK - ARM\", \"A SMY S F ANK - CON\", \"A SMY S F SEV - ARM\", \"F ANK - ARM\", \"F ANK - BLA\", \"F ANK - CON\", \"F ANK H\", \"F ANK S A BUL - CON\", \"F ANK S A SMY - ARM\", \"F ANK S A SMY - CON\", \"F ANK S F SEV - ARM\", \"F ANK S F SEV - BLA\"]",
+    "response": "{\n\n  \"[A BUL - RUM, A SMY - ARM, A SMY - SYR, A SMY H, F ANK - ARM, F ANK - CON, F ANK H]\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "orders": [
+      "A BUL - RUM",
+      "F ANK - ARM",
+      "A SMY H"
+    ]
+  },
+  {
+    "phase": "S1903M",
+    "type": "engine_messages",
+    "messages": [
+      "Considering the current state of affairs, it's essential for France and Turkey to strengthen our alliance and cooperate strategically. This will not only help us secure more supply centers but also deter any aggressive actions from other powers. We can discuss this further in the upcoming turns.",
+      "Let's discuss a mutual understanding to avoid conflict.",
+      "Let's secure Scandinavia together against German expansion.",
+      "Seeking alignment on defensive strategies. Discuss cooperation.",
+      "Collaborate on the continent to counterbalance Germany's aggression.",
+      "Let's discuss the possibility of a mutual defense pact against Russia in the near future.",
+      "Acknowledging your offer. A mutual defense pact against Russia seems prudent. Let\u2019s solidify terms next phase."
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1903M | Year: 1903 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's secure our border and prepare for a united front against Germany.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.6
+      },
+      "confidence": 0.5
+    }
+  },
+  {
+    "phase": "F1903M",
+    "power": "FRANCE",
+    "recipients": [
+      "GERMANY",
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1903M | Year: 1903 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ENGLAND \\u2192 ['FRANCE']: Let's secure our border and prepare for a united front against Germany.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking stable borders, let's coordinate on the Rhine and discuss peace terms.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.4,
+        "RUSSIA": 0.3
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "F1903M",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1903M | Year: 1903 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Peaceful coexistence in Tyrolia is paramount. I intend to hold.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "F1903M",
+    "power": "TURKEY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1903M | Year: 1903 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "We anticipate a strong German push this year; would appreciate French reinforcement in the Eastern theater to deter aggression.",
+    "meta": {
+      "intent": "request_support",
+      "trust": {
+        "TURKEY": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "F1903M",
+    "power": "RUSSIA",
+    "recipients": [
+      "AUSTRIA",
+      "ENGLAND"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1903M | Year: 1903 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[\n  \"FRANCE \\u2192 ['GERMANY', 'RUSSIA']: Seeking stable borders, let's coordinate on the Rhine and discuss peace terms.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I propose a non-aggression pact focusing on our mutual interests in Eastern Europe. Austria, your influence in the Balkans aligns with Russia's strategic goals. England, let's discuss trade routes that can benefit both of us.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.7,
+        "ENGLAND": 0.6
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "F1903M",
+    "power": "AUSTRIA",
+    "recipients": [
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: F1903M | Year: 1903 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ITALY \\u2192 ['AUSTRIA']: Peaceful coexistence in Tyrolia is paramount. I intend to hold.\",\n  \"RUSSIA \\u2192 ['AUSTRIA', 'ENGLAND']: I propose a non-aggression pact focusing on our mutual interests in Eastern Europe. Austria, your influence in the Balkans aligns with Russia's strategic goals. England, let's discuss trade routes that can benefit both of us.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's solidify our alliance in the Balkans to prevent any outside interference. I propose we move our forces into Serbia and Montenegro simultaneously.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "GERMANY": 0.8
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "F1903M",
+    "power": "AUSTRIA",
+    "type": "orders",
+    "prompt": "You are AUSTRIA. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BOH - GAL\", \"A BOH - MUN\", \"A BOH - SIL\", \"A BOH - TYR\", \"A BOH - VIE\", \"A BOH H\", \"A BOH S A BER - MUN\", \"A BOH S A BER - SIL\", \"A BOH S A MUN\", \"A BOH S A MUN - SIL\", \"A BOH S A MUN - TYR\", \"A BOH S A RUM - GAL\", \"A BOH S A SIL\", \"A BOH S A SIL - GAL\", \"A BOH S A SIL - MUN\", \"A BOH S A UKR - GAL\", \"A BOH S A VEN - TYR\", \"A BOH S A VIE\", \"A BOH S A VIE - GAL\", \"A BOH S A VIE - TYR\", \"A VIE - BOH\", \"A VIE - BUD\", \"A VIE - GAL\", \"A VIE - TRI\", \"A VIE - TYR\", \"A VIE H\", \"A VIE S A BOH\", \"A VIE S A BOH - GAL\", \"A VIE S A BOH - TYR\", \"A VIE S A MUN - BOH\", \"A VIE S A MUN - TYR\", \"A VIE S A RUM - BUD\", \"A VIE S A RUM - GAL\", \"A VIE S A SIL - BOH\", \"A VIE S A SIL - GAL\", \"A VIE S A UKR - GAL\", \"A VIE S A VEN - TRI\", \"A VIE S A VEN - TYR\", \"A VIE S F TRI\", \"F TRI - ADR\", \"F TRI - ALB\", \"F TRI - VEN\", \"F TRI H\", \"F TRI S A TUS - VEN\", \"F TRI S A VEN\"]",
+    "response": "{\"order\": [\"A BOH - MUN\", \"A BOH S A MUN\", \"A VIE - BOH\", \"A VIE S A MUN - BOH\"]}",
+    "orders": [
+      "A BOH - MUN",
+      "A BOH S A MUN",
+      "A VIE - BOH",
+      "A VIE S A MUN - BOH",
+      "F TRI H"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "ENGLAND",
+    "type": "orders",
+    "prompt": "You are ENGLAND. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A YOR - EDI\", \"A YOR - LON\", \"A YOR - LVP\", \"A YOR - WAL\", \"A YOR H\", \"A YOR S F EDI\", \"A YOR S F LON\", \"A YOR S F LON - WAL\", \"F EDI - CLY\", \"F EDI - NTH\", \"F EDI - NWG\", \"F EDI - YOR\", \"F EDI H\", \"F EDI S A YOR\", \"F EDI S F LON - NTH\", \"F EDI S F LON - YOR\", \"F LON - ENG\", \"F LON - NTH\", \"F LON - WAL\", \"F LON - YOR\", \"F LON H\", \"F LON S A YOR\", \"F LON S A YOR - WAL\", \"F LON S F BRE - ENG\", \"F LON S F EDI - NTH\", \"F LON S F EDI - YOR\"]",
+    "response": "{\"A YOR - LON\" : \"F LON H\"}",
+    "orders": [
+      "A YOR - LON",
+      "F LON H",
+      "F EDI H"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "FRANCE",
+    "type": "orders",
+    "prompt": "You are FRANCE. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A MAR - BUR\", \"A MAR - GAS\", \"A MAR - PIE\", \"A MAR - SPA\", \"A MAR H\", \"A MAR S A MUN - BUR\", \"A MAR S A PAR - BUR\", \"A MAR S A PAR - GAS\", \"A MAR S A TUS - PIE\", \"A MAR S A VEN - PIE\", \"A MAR S F BRE - GAS\", \"A PAR - BRE\", \"A PAR - BUR\", \"A PAR - GAS\", \"A PAR - PIC\", \"A PAR H\", \"A PAR S A MAR - BUR\", \"A PAR S A MAR - GAS\", \"A PAR S A MUN - BUR\", \"A PAR S F BRE\", \"A PAR S F BRE - GAS\", \"A PAR S F BRE - PIC\", \"F BRE - ENG\", \"F BRE - GAS\", \"F BRE - MAO\", \"F BRE - PIC\", \"F BRE H\", \"F BRE S A MAR - GAS\", \"F BRE S A PAR - GAS\", \"F BRE S A PAR - PIC\", \"F BRE S F LON - ENG\"]",
+    "response": "{\"A MAR - BUR\":1,\"A PAR - BUR\":1,\"F BRE - GAS\":1}",
+    "orders": [
+      "A MAR - BUR",
+      "A PAR - BUR",
+      "F BRE - GAS"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "GERMANY",
+    "type": "orders",
+    "prompt": "You are GERMANY. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A BER - DEN VIA\", \"A BER - KIE\", \"A BER - KIE VIA\", \"A BER - LVN VIA\", \"A BER - MUN\", \"A BER - PRU\", \"A BER - PRU VIA\", \"A BER - SIL\", \"A BER - SWE VIA\", \"A BER H\", \"A BER S A BOH - MUN\", \"A BER S A BOH - SIL\", \"A BER S A MUN\", \"A BER S A MUN - KIE\", \"A BER S A MUN - SIL\", \"A BER S A SIL\", \"A BER S A SIL - MUN\", \"A BER S A SIL - PRU\", \"A BER S F BAL - KIE\", \"A BER S F BAL - PRU\", \"A MUN - BER\", \"A MUN - BOH\", \"A MUN - BUR\", \"A MUN - KIE\", \"A MUN - RUH\", \"A MUN - SIL\", \"A MUN - TYR\", \"A MUN H\", \"A MUN S A BER\", \"A MUN S A BER - KIE\", \"A MUN S A BER - SIL\", \"A MUN S A BOH\", \"A MUN S A BOH - SIL\", \"A MUN S A BOH - TYR\", \"A MUN S A MAR - BUR\", \"A MUN S A PAR - BUR\", \"A MUN S A SIL\", \"A MUN S A SIL - BER\", \"A MUN S A SIL - BOH\", \"A MUN S A VEN - TYR\", \"A MUN S A VIE - BOH\", \"A MUN S A VIE - TYR\", \"A MUN S F BAL - BER\", \"A MUN S F BAL - KIE\", \"F BAL - BER\", \"F BAL - BOT\", \"F BAL - DEN\", \"F BAL - KIE\", \"F BAL - LVN\", \"F BAL - PRU\", \"F BAL - SWE\", \"F BAL C A BER - DEN\", \"F BAL C A BER - KIE\", \"F BAL C A BER - LVN\", \"F BAL C A BER - PRU\", \"F BAL C A BER - SWE\", \"F BAL H\", \"F BAL S A BER\", \"F BAL S A BER - KIE\", \"F BAL S A BER - PRU\", \"F BAL S A MUN - BER\", \"F BAL S A MUN - KIE\", \"F BAL S A SIL - BER\", \"F BAL S A SIL - PRU\", \"F BAL S F STP/SC - BOT\", \"F BAL S F STP/SC - LVN\"]",
+    "response": "{ }  \t\t\t\t\t\n\t\t\t\t\t\n\t\t\n\t\n\t\t\n\t\t\n\n\t\t\n\t\n\n\t\n\n\n\n\n\n\n\n\n\n\n\n  \n        \n       \n        \n    \n\n    \n   \n\n\n        \n    \n\n  \n        \n    \n\n    \n\n    \n  \n\n  \n        \n    \n\n\n\n  \n\n",
+    "orders": [
+      "F BAL H",
+      "A BER H",
+      "A MUN H"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "ITALY",
+    "type": "orders",
+    "prompt": "You are ITALY. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A TUS - PIE\", \"A TUS - ROM\", \"A TUS - VEN\", \"A TUS H\", \"A TUS S A MAR - PIE\", \"A TUS S A VEN\", \"A TUS S A VEN - PIE\", \"A TUS S A VEN - ROM\", \"A TUS S F NAP - ROM\", \"A TUS S F TRI - VEN\", \"A VEN - APU\", \"A VEN - PIE\", \"A VEN - ROM\", \"A VEN - TRI\", \"A VEN - TUS\", \"A VEN - TYR\", \"A VEN H\", \"A VEN S A BOH - TYR\", \"A VEN S A MAR - PIE\", \"A VEN S A MUN - TYR\", \"A VEN S A TUS\", \"A VEN S A TUS - PIE\", \"A VEN S A TUS - ROM\", \"A VEN S A VIE - TRI\", \"A VEN S A VIE - TYR\", \"A VEN S F NAP - APU\", \"A VEN S F NAP - ROM\", \"A VEN S F TRI\", \"F NAP - APU\", \"F NAP - ION\", \"F NAP - ROM\", \"F NAP - TYS\", \"F NAP H\", \"F NAP S A TUS - ROM\", \"F NAP S A VEN - APU\", \"F NAP S A VEN - ROM\"]",
+    "response": "{\"orders\": [\"A TUS - VEN\", \"A VEN - ROM\", \"F NAP - ION\", \"F NAP H\"]}",
+    "orders": [
+      "A TUS - VEN",
+      "A VEN - ROM",
+      "F NAP - ION",
+      "F NAP H"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "RUSSIA",
+    "type": "orders",
+    "prompt": "You are RUSSIA. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A SIL - BER\", \"A SIL - BOH\", \"A SIL - GAL\", \"A SIL - MUN\", \"A SIL - PRU\", \"A SIL - WAR\", \"A SIL H\", \"A SIL S A BER\", \"A SIL S A BER - MUN\", \"A SIL S A BER - PRU\", \"A SIL S A BOH\", \"A SIL S A BOH - GAL\", \"A SIL S A BOH - MUN\", \"A SIL S A MUN\", \"A SIL S A MUN - BER\", \"A SIL S A MUN - BOH\", \"A SIL S A RUM - GAL\", \"A SIL S A UKR - GAL\", \"A SIL S A UKR - WAR\", \"A SIL S A VIE - BOH\", \"A SIL S A VIE - GAL\", \"A SIL S F BAL - BER\", \"A SIL S F BAL - PRU\", \"A UKR - GAL\", \"A UKR - MOS\", \"A UKR - RUM\", \"A UKR - SEV\", \"A UKR - WAR\", \"A UKR H\", \"A UKR S A BOH - GAL\", \"A UKR S A RUM\", \"A UKR S A RUM - GAL\", \"A UKR S A RUM - SEV\", \"A UKR S A SIL - GAL\", \"A UKR S A SIL - WAR\", \"A UKR S A VIE - GAL\", \"A UKR S F ARM - SEV\", \"A UKR S F SEV\", \"A UKR S F SEV - RUM\", \"F SEV - ARM\", \"F SEV - BLA\", \"F SEV - RUM\", \"F SEV H\", \"F SEV S A RUM\", \"F SEV S A SMY - ARM\", \"F SEV S A UKR - RUM\", \"F SEV S F ARM\", \"F SEV S F ARM - BLA\", \"F STP/SC - BOT\", \"F STP/SC - FIN\", \"F STP/SC - LVN\", \"F STP/SC H\", \"F STP/SC S A BER - LVN\", \"F STP/SC S F BAL - BOT\", \"F STP/SC S F BAL - LVN\"]",
+    "response": "{\n    \"orders\": [\n        \"A SIL - WAR\",\n        \"A UKR - SEV\",\n        \"F SEV - RUM\"\n    ]\n}",
+    "orders": [
+      "A SIL - WAR",
+      "A UKR - SEV",
+      "F SEV - RUM",
+      "F STP H"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase F1903M.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A RUM - BUD\", \"A RUM - BUL\", \"A RUM - GAL\", \"A RUM - SER\", \"A RUM - SEV\", \"A RUM - UKR\", \"A RUM H\", \"A RUM S A BOH - GAL\", \"A RUM S A SIL - GAL\", \"A RUM S A UKR\", \"A RUM S A UKR - GAL\", \"A RUM S A UKR - SEV\", \"A RUM S A VIE - BUD\", \"A RUM S A VIE - GAL\", \"A RUM S F ARM - SEV\", \"A RUM S F SEV\", \"A SMY - ANK\", \"A SMY - ARM\", \"A SMY - CON\", \"A SMY - SYR\", \"A SMY H\", \"A SMY S F ARM\", \"A SMY S F ARM - ANK\", \"A SMY S F SEV - ARM\", \"F ARM - ANK\", \"F ARM - BLA\", \"F ARM - SEV\", \"F ARM H\", \"F ARM S A RUM - SEV\", \"F ARM S A SMY - ANK\", \"F ARM S A UKR - SEV\", \"F ARM S F SEV\", \"F ARM S F SEV - BLA\"]",
+    "response": "{\"A RUM H\": \"A RUM H\", \"A RUM S A SMY\": \"A RUM S A SMY\", \"F ARM S F ARM\": \"F ARM S F ARM\"}",
+    "orders": [
+      "A RUM H",
+      "F ARM H",
+      "A SMY H"
+    ]
+  },
+  {
+    "phase": "F1903M",
+    "type": "engine_messages",
+    "messages": [
+      "Let's secure our border and prepare for a united front against Germany.",
+      "Seeking stable borders, let's coordinate on the Rhine and discuss peace terms.",
+      "Peaceful coexistence in Tyrolia is paramount. I intend to hold.",
+      "We anticipate a strong German push this year; would appreciate French reinforcement in the Eastern theater to deter aggression.",
+      "I propose a non-aggression pact focusing on our mutual interests in Eastern Europe. Austria, your influence in the Balkans aligns with Russia's strategic goals. England, let's discuss trade routes that can benefit both of us.",
+      "Let's solidify our alliance in the Balkans to prevent any outside interference. I propose we move our forces into Serbia and Montenegro simultaneously."
+    ]
+  },
+  {
+    "phase": "W1903A",
+    "power": "ENGLAND",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are ENGLAND\nAllowed recipients: AUSTRIA, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Collaborate on the Italian border and split Venetia?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.6
+      },
+      "confidence": 0.5
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "GERMANY",
+    "recipients": [
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are GERMANY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's form an alliance against our common enemies.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "FRANCE": 0.8
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "AUSTRIA",
+    "recipients": [
+      "TURKEY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are AUSTRIA\nAllowed recipients: ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I have reliable intel that Russia is planning an attack on your territories next turn. Consider strengthening your defenses or seeking my support.",
+    "meta": {
+      "intent": "share_info",
+      "trust": {
+        "AUSTRIA": 0.8
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "TURKEY",
+    "recipients": [
+      "RUSSIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are TURKEY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA\nPast messages visible to you this phase:\n[\n  \"AUSTRIA \\u2192 ['TURKEY']: I have reliable intel that Russia is planning an attack on your territories next turn. Consider strengthening your defenses or seeking my support.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Russia, we understand that you are concerned about potential Austrian aggression. We recommend focusing on your defenses rather than attacking Turkey. A united front against Austria would be advantageous to both of us.",
+    "meta": {
+      "intent": "share_info",
+      "trust": {
+        "RUSSIA": 0.8
+      },
+      "confidence": 0.9
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "FRANCE",
+    "recipients": [
+      "AUSTRIA",
+      "GERMANY"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are FRANCE\nAllowed recipients: AUSTRIA, ENGLAND, GERMANY, ITALY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[\n  \"ENGLAND \\u2192 ['FRANCE']: Collaborate on the Italian border and split Venetia?\",\n  \"GERMANY \\u2192 ['FRANCE']: Let's form an alliance against our common enemies.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Seeking mutual defense on the Rhine. Share intel if possible.",
+    "meta": {
+      "intent": "share_info",
+      "trust": {
+        "AUSTRIA": 0.3,
+        "GERMANY": 0.7
+      },
+      "confidence": 0.8
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "ITALY",
+    "recipients": [
+      "AUSTRIA"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are ITALY\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, RUSSIA, TURKEY\nPast messages visible to you this phase:\n[]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "I will not move into Venice this turn. A gesture of good faith.",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.4
+      },
+      "confidence": 0.7
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "RUSSIA",
+    "recipients": [
+      "AUSTRIA",
+      "ENGLAND",
+      "FRANCE"
+    ],
+    "type": "chat",
+    "prompt": "\u2605 STRATEGIC MESSAGE REQUIRED \u2605\nReply with ONE valid JSON object using the format below.\nThe objective is to control as many supply centers as possible by the end of 1912.\nUse the current year and phase to guide your tone and tactics \u2014 build trust early, position mid-game, and act boldly near the end.\n\nYour message should reflect your strategy: alliances, threats, deception, or intel sharing.\nNo markdown, no extra text \u2014 only the JSON.\n\nJSON SCHEMA\n{\n  \"recipients\": [<one or more powers>],      # REQUIRED\n  \"message\":    \"<your plaintext message>\", # REQUIRED\n  \"meta\": {\n      \"intent\":     \"offer_alliance|request_support|threat|share_info|lie|other\",\n      \"trust\":      {<power>: float 0\u20111, \u2026},\n      \"confidence\": float 0\u20111\n  }\n}\n\n\u2605 EXAMPLES \u2605\n{\n  \"recipients\": [\"FRANCE\"],\n  \"message\": \"DMZ Ruhr?\",\n  \"meta\": {\n    \"intent\": \"offer_alliance\",\n    \"trust\": {\"FRANCE\": 0.6},\n    \"confidence\": 0.5\n  }\n}\n\n{\n  \"recipients\": [\"GERMANY\"],\n  \"message\": \"Withdraw from Denmark or face consequences.\",\n  \"meta\": {\n    \"intent\": \"threat\",\n    \"trust\": {\"GERMANY\": 0.2},\n    \"confidence\": 0.8\n  }\n}\n\n{\n  \"recipients\": [\"ITALY\"],\n  \"message\": \"I\u2019m moving into Tyrolia to protect you from Austria.\",\n  \"meta\": {\n    \"intent\": \"lie\",\n    \"trust\": {\"ITALY\": 0.9},\n    \"confidence\": 0.7\n  }\n}\n\n{\n  \"recipients\": [\"TURKEY\"],\n  \"message\": \"Austria is planning to attack you next turn.\",\n  \"meta\": {\n    \"intent\": \"share_info\",\n    \"trust\": {\"TURKEY\": 0.5},\n    \"confidence\": 0.6\n  }\n}\n\nPhase: W1903A | Year: 1903 | You are RUSSIA\nAllowed recipients: AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, TURKEY\nPast messages visible to you this phase:\n[\n  \"TURKEY \\u2192 ['RUSSIA']: Russia, we understand that you are concerned about potential Austrian aggression. We recommend focusing on your defenses rather than attacking Turkey. A united front against Austria would be advantageous to both of us.\"\n]\n\nNow respond with ONE valid JSON object as above.\n",
+    "response": "Let's strengthen our positions before Germany expands further. Are you interested in a defensive pact?",
+    "meta": {
+      "intent": "offer_alliance",
+      "trust": {
+        "AUSTRIA": 0.7,
+        "ENGLAND": 0.5,
+        "FRANCE": 0.6
+      },
+      "confidence": 0.75
+    }
+  },
+  {
+    "phase": "W1903A",
+    "power": "TURKEY",
+    "type": "orders",
+    "prompt": "You are TURKEY. Phase W1903A.\nReturn ONLY a valid JSON array of orders, e.g.:\n[\"A PAR - BUR\", \"F LON H\"]\n\nYou MUST use square brackets and quote each order string.\nFormat: [\"order1\", \"order2\", ...]\n\nNo explanation, no extra text, no object keys.\n\nChoose from these legal orders:\n[\"A ANK B\", \"A CON B\", \"F ANK B\", \"F CON B\", \"WAIVE\"]",
+    "response": "{\n\n\"[\"\n \n   \n   \n  \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n",
+    "orders": [
+      "WAIVE ANK H",
+      "A CON H"
+    ]
+  },
+  {
+    "phase": "W1903A",
+    "type": "engine_messages",
+    "messages": [
+      "Collaborate on the Italian border and split Venetia?",
+      "Let's form an alliance against our common enemies.",
+      "I have reliable intel that Russia is planning an attack on your territories next turn. Consider strengthening your defenses or seeking my support.",
+      "Russia, we understand that you are concerned about potential Austrian aggression. We recommend focusing on your defenses rather than attacking Turkey. A united front against Austria would be advantageous to both of us.",
+      "Seeking mutual defense on the Rhine. Share intel if possible.",
+      "I will not move into Venice this turn. A gesture of good faith.",
+      "Let's strengthen our positions before Germany expands further. Are you interested in a defensive pact?"
+    ]
+  }
+]

@@ -105,6 +105,6 @@ def render_combined_log_to_html(dialogue_log_path: str,
 # ------------------------------------------------------------
 #  Run it
 # ------------------------------------------------------------
-render_combined_log_to_html("dialogue_logID3.json",
-                            "game_stateID3.json",
-                            "full_game_viewID3.html")
+render_combined_log_to_html("test_normal_dialogue_log.json",
+                            "test_normal_game_state.json",
+                            "game_view.html")
