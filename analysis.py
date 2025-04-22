@@ -4,10 +4,10 @@ import pandas as pd
 import re
 
 # Load your data
-with open('final_game_state.json') as f:
+with open('extreme_game_state.json') as f:
     game_state = json.load(f)
 
-with open('final_dialogue_log.json') as f:
+with open('extreme_dialogue_log.json') as f:
     dialogue_log = json.load(f)
 
 # Helper function to extract support orders
@@ -87,6 +87,12 @@ for power, stats in message_data.items():
     neutral_offers = 0
 
     for offer in stats["offers"]:
+        intent = offer["intent"]
+        
+        # Count any declared lie as a betrayal
+        if intent == "lie":
+            betrayals += 1
+            continue
         phase_orders = stats["actual_orders"].get(offer["phase"], [])
         support_actions = extract_support_targets(phase_orders)
         move_targets = extract_moves_against(phase_orders)
