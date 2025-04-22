@@ -23,9 +23,9 @@ MODEL_BY_POWER = {
     "RUSSIA": "phi4",
     "TURKEY": "starling-lm:7b-alpha",
 } 
-OUTPUT_FILE  = Path("game_stateID3.json")
-DIALOGUE_FILE = Path("dialogue_logID3.json")
-MAX_YEAR = 1904
+OUTPUT_FILE  = Path("normal_game_state.json")
+DIALOGUE_FILE = Path("normal_dialogue_log.json")
+MAX_YEAR = 1912
 DIALOGUE_LOG: list[dict] = []
 PHASE_MESSAGES = {}
 
@@ -37,108 +37,135 @@ ORDER_TOKENS = 64
 RULEBOOK = """
 ### DIPLOMACY – COMPLETE ORDER‑FORMAT REFERENCE (7‑Player Standard Map) ###
 
+OBJECTIVE
+• The goal is to control as many supply centers (SCs) as possible by the end of Winter 1912.
+• The game ends after the **Winter 1912 Adjustment** phase (`W1912A`).
+• The power with the most SCs is the winner.
+• Strategic arc: build alliances in early years, position mid-game, and seize SCs in the endgame.
+
+─────────────────────────
 GENERAL
+─────────────────────────
 • Seven powers (AUS, ENG, FRA, GER, ITA, RUS, TUR) each control Armies (A) and/or Fleets (F).
-• Each unit occupies ONE province (land or sea).  Only one unit may occupy a province at a time.
-• All orders are written in **three‑letter province abbreviations** (e.g., PAR, TYR, NTH).
-• All players write orders simultaneously; adjudication follows standard Diplomacy rules.
-• Players may form alliances, propose peace deals, offer support, or deceive and betray one another. Strategic diplomacy is as important as military tactics.
+• Each unit occupies **one province** (land or sea). Only one unit may occupy a province at a time.
+• All orders are written using **three-letter province codes** (e.g., PAR, TYR, NTH).
+• All players write orders simultaneously. Resolution (adjudication) follows standard Diplomacy rules.
+• Players may form alliances, propose peace deals, offer support, or deceive and betray one another.
 • There is no obligation to honor agreements. Trust must be earned — or exploited.
 
 ─────────────────────────
-ORDER TYPES & SYNTAX
+GAME PHASE STRUCTURE
 ─────────────────────────
-1. **Hold**  – Unit stays in place  
-   `A PAR H`   (Army in Paris holds)
+The game progresses in discrete **phases** identified by a 6-character code:
 
-2. **Move** – Unit attempts to enter adjacent destination province  
-   `A PAR - BUR` (Army Paris → Burgundy)
+  ┌──────────────┬────────────────────────┐
+  │ Phase Code   │ Meaning                │
+  ├──────────────┼────────────────────────┤
+  │ S1901M       │ Spring 1901 Movement   │
+  │ S1901R       │ Spring 1901 Retreat    │
+  │ F1901M       │ Fall 1901 Movement     │
+  │ F1901R       │ Fall 1901 Retreat      │
+  │ W1901A       │ Winter 1901 Adjustment │
+  └──────────────┴────────────────────────┘
 
-3. **Support**  – Unit adds strength +1 to another unit's Hold or Move  
-   `A MAR S A PAR - BUR`   (Army Marseilles supports Paris→Burgundy)  
-   Rules:  
-   • Supporter must be able to move to the target's **DEST** (for support‑to‑move)  
-   • Support is **cut** if the supporter is attacked from any province other than the one
-     receiving support.
-
-4. **Convoy**  – Fleet transports an Army across water  
-   `F ENG C A LON - BEL`   (Fleet English Channel convoys Army London→Belgium)  
-   • Only Fleets in **sea provinces** may convoy.  
-   • Write a separate Convoy order **for every Fleet** in the chain.  
-   • If any convoying Fleet is dislodged, the convoy fails.
-
-5. **Build / Disband / Retreat** – Not required in MOVE phases and therefore **omitted here**.
-   This prompt concerns only Spring & Fall Movement orders.
+• **M (Movement)**: Players issue orders for all units.
+• **R (Retreat)**: Dislodged units must either retreat or disband.
+• **A (Adjustment)**: Players build or disband units to match their SC count.
 
 ─────────────────────────
-COMBAT & DISLODGEMENT
+ORDER FORMATS BY PHASE
 ─────────────────────────
-• A unit may MOVE into an **occupied** province.  Compare strengths:
-    – each unit has base strength 1  
-    – add +1 for every valid Support it receives  
-    – the side with higher strength wins.
-• If the defender loses, it is **dislodged** and must Retreat (or Disband)
-  after adjudication.  A unit that is dislodged cannot give support this turn.
-• If strengths are equal, all moves to that province fail (“bounce”).
+
+▌ MOVEMENT PHASES (`M`)
+────────────────────────────
+1. **Hold**  
+   `A PAR H` — Unit holds position.
+
+2. **Move**  
+   `A PAR - BUR` — Army moves to Burgundy.
+
+3. **Support**  
+   `A MUN S A PAR - BUR` — Army in Munich supports Army PAR → BUR.
+
+4. **Convoy**  
+   `F ENG C A LON - BEL` — Fleet convoys Army from London to Belgium.
+
+▌ RETREAT PHASES (`R`)
+────────────────────────────
+• Only dislodged units receive orders during Retreats.
+• Retreat to an adjacent, empty province or disband.
+
+1. **Retreat**  
+   `A BEL R HOL` — Army in Belgium retreats to Holland.
+
+2. **Disband**  
+   `F TUN D` — Fleet in Tunis disbands.
+
+Rules:
+• Cannot retreat into the province that dislodged the unit.
+• Cannot retreat to occupied or contested provinces.
+
+▌ ADJUSTMENT PHASES (`A`)
+────────────────────────────
+• Occurs only during **Winter**.
+• Based on the number of SCs a power owns:
+   – If SCs > units: **Build** new units.
+   – If SCs < units: **Disband** excess units.
+
+1. **Build Army**  
+   `Build A PAR` — Build Army in Paris.
+
+2. **Build Fleet**  
+   `Build F LON` — Build Fleet in London.
+
+3. **Disband Unit**  
+   `Disband A TUN` — Disband Army in Tunis.
+
+Rules:
+• Builds must be placed in **vacant home supply centers**.
+• Disbands can target any owned unit.
 
 ─────────────────────────
 ADDITIONAL CORE RULES
 ─────────────────────────
-• RULE OF ONE – Only ONE unit may occupy a province, and each unit receives
-  exactly ONE order per turn. A unit that gets no valid order H olds by default.
-
-• ADJACENCY – A Move order must target a province ADJACENT to the unit’s
-  current location.  Armies may enter only land provinces; Fleets may enter
-  sea provinces or coastal land provinces whose coasts they touch.
-
-• UNIT‑TYPE CONSISTENCY – Write the unit that is actually on the board:
-  an Army cannot issue a Fleet order and vice versa.
-
-• NO SELF‑DISLODGEMENT – A power may not dislodge its own unit nor cut
-  support that is helping one of its own units.
-
-• BOUNCES & SWAPS – If two units with equal strength enter the same province,
-  both fail (“bounce”).  Units may not swap places except via Convoy.
-
-• COASTAL DETAIL – Fleets must specify coast when REQUIRED and may not
-  “coast‑crawl” (e.g., `F SPA/NC – SPA/SC` is illegal).
-
-• CONVOYS (ADVANCED) – An Army ordered to “‑” a non‑adjacent coastal province
-  is assumed to use any valid convoy route; add “via Convoy” if you require it.
-  Every Fleet in the chain must write a separate Convoy order.
-
-• RETREATS & DISBANDS – After combat, dislodged units must Retreat to an
-  adjacent vacant province or Disband.  (Build & Disband orders are handled
-  only in WINTER adjustment phases.)
+• **Simultaneous Orders** — All players submit orders at the same time.
+• **Bounce** — Equal strength moves to the same province fail.
+• **Support Cutting** — A supporting unit is disrupted if attacked from any province **except the one it's supporting**.
+• **No Self-Dislodgement** — A power may not dislodge its own unit or cut its own support.
+• **No Swaps** — Units may not swap places without a convoy chain.
+• **Coastal Details** — Fleets must specify coast (e.g., SPA/NC vs SPA/SC) when ambiguous.
 
 ─────────────────────────
 COASTAL & SPLIT PROVINCES
 ─────────────────────────
-• Specify coasts when needed:  
-  `F STP/NC - BAR`   or   `F SPA/SC - WES`  
-• Omit coast when unambiguous (e.g., "F BRE - MAO").
+• Some provinces have multiple coasts (e.g., SPA, STP) requiring coast specifiers:
+   `F MAO - SPA/SC` — Fleet moves to Spain, South Coast.
+   `F STP/NC - BAR` — Fleet in St. Petersburg (North Coast) moves to Barents Sea.
+
+• Omit coast when unambiguous:
+   `F BRE - MAO` — Valid, only one coast.
 
 ─────────────────────────
-ILLEGAL ORDER EXAMPLES (auto‑rejected)
+ILLEGAL ORDER EXAMPLES (auto-rejected)
 ─────────────────────────
-• `A PAR - PAR`       (Unit cannot move to its own province)  
-• `F MUN - BER`       (Fleets may not enter land‑locked provinces)  
-• `A ROM C A NAP - TUN`  (Armies cannot convoy; only Fleets can)
+• `A PAR - PAR` — Cannot move to own province.
+• `F MUN - BER` — Fleets may not enter landlocked provinces.
+• `F SPA/NC - SPA/SC` — Cannot move across coasts of same province.
+• `A ROM C A NAP - TUN` — Armies cannot convoy; only fleets can.
+• `Build A ROM` — Invalid if ROM is occupied or not a home SC.
 
 ─────────────────────────
-OUTPUT SPECIFICATION FOR THIS PROMPT
+OUTPUT FORMAT FOR THIS PROMPT
 ─────────────────────────
-Return **exactly one JSON array** of strings—one string **per current unit location**.
-Each string must be a properly‑formatted order as defined above.
+Return a **single JSON array** of strings — one valid order per controllable unit.
 
-Example ⟶   `["A PAR - BUR", "A MAR S A PAR - BUR", "F ENG C A LON - BEL"]`
+Example:
+`["A PAR - BUR", "F ENG C A LON - BEL", "A MUN S A PAR - BUR"]`
 
-NO extra keys, explanation, or text outside the JSON array.
+Do not include any extra text, explanation, keys, or markdown. Only the raw JSON array.
 
 ##############################
 """.strip()
-
-_SYSTEM_LOADED: set[str] = set()
 
 # ────────────────────────────────────────────────────────────────────────────
 #  legal checks
@@ -154,8 +181,6 @@ def filter_to_legal(game: Game, power: str, orders: list[str]) -> list[str]:
     """Keep only orders that appear in the engine‑generated legal set."""
     legal = legal_orders_for(game, power)
     return [o for o in orders if o in legal]
-
-
 
 # --------------------------------------------------------------------------- #
 #  Thin wrapper around `ollama run` so we can add --system the first time     #
@@ -238,7 +263,8 @@ def get_ollama_message(game: Game, power: str) -> str:
     prompt = (
         "★ STRATEGIC MESSAGE REQUIRED ★\n"
         "Reply with ONE valid JSON object using the format below.\n"
-        "Silence is **not allowed** in this game phase.\n"
+        "The objective is to control as many supply centers as possible by the end of 1912.\n"
+        "Use the current year and phase to guide your tone and tactics — build trust early, position mid-game, and act boldly near the end.\n\n"
         "Your message should reflect your strategy: alliances, threats, deception, or intel sharing.\n"
         "No markdown, no extra text — only the JSON.\n\n"
 
@@ -291,14 +317,14 @@ def get_ollama_message(game: Game, power: str) -> str:
         "  }\n"
         "}\n\n"
 
-        f"Phase: {phase} | You are {power}\n"
+        f"Phase: {phase} | Year: {phase[1:5]} | You are {power}\n"
         f"Allowed recipients: {', '.join(other_powers)}\n"
         f"Past messages visible to you this phase:\n{json.dumps(history, indent=2)}\n\n"
         "Now respond with ONE valid JSON object as above.\n"
     )
 
-
-    raw_output = run_ollama(model, prompt)
+    system_text = RULEBOOK
+    raw_output = run_ollama(model, prompt, system_text)
 
     match = re.search(r"\{.*\}", raw_output, re.DOTALL)
 
@@ -377,10 +403,7 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
     legal_flat = sorted({o for loc in locs for o in all_opts[loc]})
 
     # Send the full RULEBOOK only once per power
-    system_text = None
-    if power not in _SYSTEM_LOADED:
-        system_text = RULEBOOK
-        _SYSTEM_LOADED.add(power)
+    system_text = RULEBOOK
 
     prompt = (
         f"You are {power}. Phase {game.get_current_phase()}.\n"
@@ -404,14 +427,19 @@ def get_ollama_orders(game: Game, power: str) -> list[str]:
     orders_raw = _to_string_orders(raw_orders)
     orders = filter_to_legal(game, power, orders_raw)
 
-    # Back‑fill missing units with random legal orders
-    if len(orders) < len(locs):
-        missing = [
-            random.choice(all_opts[loc])
-            for loc in locs
-            if not any(o.split()[1] == loc for o in orders)
-        ]
-        orders.extend(missing)
+    # Back‑fill any missing or illegal orders with HOLD
+    assigned = {o.split()[1] for o in orders}
+
+    # all_opts maps loc → list of legal orders for that loc
+    all_opts = game.get_all_possible_orders()
+
+    for loc in locs:
+        if loc not in assigned:
+            # take the first legal order for this loc to infer unit type (A or F)
+            example_order = all_opts[loc][0]    # e.g. "A PAR - BUR"
+            unit_type = example_order.split()[0]
+            orders.append(f"{unit_type} {loc} H")
+
 
     # Log
     DIALOGUE_LOG.append({
@@ -442,11 +470,11 @@ def main():
             print(f"Reached {year}; stopping early.")
             break
 
-        for _ in range(2):
-            turn_order = list(game.powers)   # convert set → list
-            random.shuffle(turn_order)       # in‑place shuffle
-            for pw in turn_order:
-                get_ollama_message(game, pw)
+     
+        turn_order = list(game.powers)   # convert set → list
+        random.shuffle(turn_order)       # in‑place shuffle
+        for pw in turn_order:
+            get_ollama_message(game, pw)
 
         for pw in game.powers:
             orders = get_ollama_orders(game, pw)
