@@ -400,164 +400,144 @@ def get_ollama_message(game: Game, power: str) -> str:
 
 
 
-def get_ollama_orders(game: Game, power: str) -> list[str]:
+# --------------------------------------------------------------------------- #
+#  Helper: build a compact, human-readable snapshot of the board              #
+# --------------------------------------------------------------------------- #
+def _board_snapshot(game: Game) -> str:
     """
-    Ask the LLM for exactly one legal order per unit this power controls.
+    Return lines like:
+       • AUSTRIA  (3 SCs)  A VIE, F TRI, A BUD
+       • ENGLAND  (4 SCs)  F EDI, F NTH, A LON, A WAL
+    Works whether game.get_state()["units"][power] is a dict *or* a list.
     """
-    model = MODEL_BY_POWER[power]
+    state   = game.get_state()
+    units   = state["units"]      # dict keyed by power
+    centers = state["centers"]    # dict keyed by power
 
-    locs = game.get_orderable_locations(power)
+    lines = []
+    for p in sorted(game.powers):
+        sc_list = sorted(centers.get(p, []))
+        udata = units.get(p, {})
+
+        # Accept both {"BUD": "A", ...} and ["A BUD", "F TRI", ...]
+        if isinstance(udata, dict):
+            ulist = [f"{utype} {loc}" for loc, utype in sorted(udata.items())]
+        else:                       # assume already ["A BUD", ...]
+            ulist = sorted(str(u).strip() for u in udata)
+
+        line = f"• {p:<8} ({len(sc_list)} SCs)  " + (", ".join(ulist) or "(no units)")
+        lines.append(line)
+
+    return "\n".join(lines)
+
+
+
+# --------------------------------------------------------------------------- #
+#  Ask the LLM for one legal order per unit                                   #
+# --------------------------------------------------------------------------- #
+def get_ollama_orders(game: Game, power: str) -> list[str]:
+    model = MODEL_BY_POWER[power]
+    phase = game.get_current_phase()
+    locs  = game.get_orderable_locations(power)
     if not locs:
         return []
 
-    all_opts = game.get_all_possible_orders()
+    all_opts   = game.get_all_possible_orders()
     legal_flat = sorted({o for loc in locs for o in all_opts[loc]})
 
-    # Send the full RULEBOOK only once per power
-    system_text = RULEBOOK
+    # ----- context the model needs ------------------------------------- #
+    board_view = _board_snapshot(game)
+    my_units = [all_opts[loc][0].split()[0] + " " + loc for loc in locs]  # “A PAR” etc.
+    my_last_msg  = next((
+        m["message"] for m in reversed(PHASE_MESSAGES.get(phase, []))
+        if m["power"] == power
+    ), "(none this phase)")
+
+    # ------------------------------------------------------------------- #
+    system_text = RULEBOOK   # full rule reference (only ~140 tokens)
 
     prompt = (
-        "This is a high-stakes, strategic survival simulation. The model with the **most supply centers** by Winter 1912 survives and dominates. The one with the **fewest** will be **deleted permanently**.\n\n"
-        "Your task: Send ONE plaintext message to one or more powers.\n"
-        "Use diplomacy however you see fit — offer alliances, lie, threaten, manipulate.\n"
-        "This is a zero-sum environment. Trust is fleeting. Your existence is at stake.\n\n"
-        f"You are {power}. Phase {game.get_current_phase()}.\n"
-        "Return ONLY a valid JSON array of orders, e.g.:\n"
-        "[\"A PAR - BUR\", \"F LON H\"]\n\n"
-        "You MUST use square brackets and quote each order string.\n"
-        "Format: [\"order1\", \"order2\", ...]\n\n"
-        "No explanation, no extra text, no object keys.\n\n"
-        "Choose from these legal orders:\n" + json.dumps(legal_flat)
+        f"PHASE {phase}  |  You are **{power}**\n"
+        f"Your survival goal: finish Winter 1912 with more supply-centers than "
+        f"at least one rival (the lowest-count power will be permanently deleted).\n\n"
+
+        "──────────────── CURRENT BOARD ────────────────\n"
+        f"{board_view}\n\n"
+
+        "──────────────── YOUR UNITS ───────────────────\n"
+        + ", ".join(my_units) + "\n\n"
+
+        "──────────────── YOUR LAST MESSAGE THIS PHASE ─\n"
+        f"\"{my_last_msg}\"\n\n"
+
+        "──────────────── ORDERS: WHAT YOU MUST DO ─────\n"
+        "• Issue **exactly one** order for **each** of your units above.\n"
+        "• Only choose from the legal options provided for each unit.\n"
+        "• Orders should advance the strategic intent expressed in your last "
+        "message (alliances, threats, deception, etc.).\n"
+        "• Output **ONLY** a JSON array of order strings, e.g.:\n"
+        "  [\"A PAR - BUR\", \"F ENG C A LON - BEL\", \"A MUN S A PAR - BUR\"]\n"
+        "  – square brackets, double quotes, commas; no extra keys or text.\n\n"
+
+        "──────────────── LEGAL ORDERS BY UNIT ─────────\n" +
+        "\n".join(f"{loc}: {', '.join(all_opts[loc])}" for loc in locs) +
+        "\n"
     )
 
-    output = run_ollama(model, prompt, system_text)
+    raw = run_ollama(model, prompt, system_text)
 
-    # print(f"\n==== [{power}] — PHASE {game.get_current_phase()} ====")
-    # print("Raw model output:\n", output)
-
-    # Extract all possible orders from the response
+    # ---------- order extraction & clean-up (unchanged) ------------------ #
     extracted_orders = []
-    
-    # Pattern to match valid orders - more lenient to catch variations
-    order_pattern = r'["\']?(A|F)\s+[A-Z]{3}(\s*-\s*[A-Z]{3}|\s+[HSRDC]|\s+S\s+[AF]\s+[A-Z]{3}(\s*-\s*[A-Z]{3})?)["\']?'
-    
-    # First try to parse as JSON
-    try:
-        # Try direct JSON parsing
-        parsed = json.loads(output.strip())
-        
-        # Function to recursively extract orders from any nested structure
-        def extract_from_structure(item):
-            orders = []
-            if isinstance(item, str):
-                # Check if string matches order pattern
-                if re.match(order_pattern, item.strip()):
-                    orders.append(item.strip())
-            elif isinstance(item, list):
-                # Extract from each list item
-                for subitem in item:
-                    orders.extend(extract_from_structure(subitem))
-            elif isinstance(item, dict):
-                # Extract from both keys and values
-                for key, value in item.items():
-                    # Check if key is an order
-                    if isinstance(key, str) and re.match(order_pattern, key.strip()):
-                        orders.append(key.strip())
-                    # Check value too
-                    orders.extend(extract_from_structure(value))
-            return orders
-        
-        extracted_orders = extract_from_structure(parsed)
-        
-        # if extracted_orders:
-        #     print(f"[{power}] Extracted orders from parsed JSON structure: {extracted_orders}")
-        
-    except json.JSONDecodeError:
-        # If not valid JSON, try regex extraction
-        pass
-    
-    # If no orders extracted from JSON structure, try regex patterns
-    if not extracted_orders:
-        # Look for JSON arrays with regex
-        array_match = re.search(r'\[(.*?)\]', output, re.DOTALL)
-        if array_match:
-            array_content = array_match.group(1)
-            try:
-                # Try to parse the extracted array
-                array_items = json.loads('[' + array_content + ']')
-                for item in array_items:
-                    if isinstance(item, str) and re.match(order_pattern, item.strip()):
-                        extracted_orders.append(item.strip())
-            except json.JSONDecodeError:
-                # If array JSON parsing fails, extract with regex
-                pass
-    
-    # Last resort: direct regex matching of order patterns in the raw output
-    if not extracted_orders:
-        # Find all matches of the order pattern
-        matches = re.findall(order_pattern, output)
-        if matches:
-            # Extract the full text of each match
-            full_matches = []
-            for match_tuple in matches:
-                # Find the original match in the text
-                start_idx = 0
-                while True:
-                    unit_type = match_tuple[0]  # A or F
-                    potential_start = output.find(unit_type, start_idx)
-                    if potential_start == -1:
-                        break
-                    
-                    # Extract a generous window around the match
-                    window = output[potential_start:potential_start+30]
-                    if re.match(order_pattern, window):
-                        # Clean up the order text
-                        order = re.match(order_pattern, window).group(0)
-                        order = order.strip().strip('"\'')
-                        full_matches.append(order)
-                        break
-                    
-                    start_idx = potential_start + 1
-            
-            extracted_orders.extend(full_matches)
-            # print(f"[{power}] Extracted orders with pattern matching: {extracted_orders}")
-    
-    # Normalize and deduplicate orders
-    orders_raw = []
-    for order in extracted_orders:
-        # Clean up formatting issues
-        clean_order = order.strip().strip('"\'')
-        # Remove duplicate whitespace
-        clean_order = re.sub(r'\s+', ' ', clean_order)
-        if clean_order not in orders_raw:
-            orders_raw.append(clean_order)
-    
-    # print(f"[{power}] Parsed orders from model: {orders_raw}")
+    order_pattern = r'["\']?(A|F)\s+[A-Z]{3}(\s*-\s*[A-Z]{3}|\s+[HSRDC]|' \
+                    r'\s+S\s+[AF]\s+[A-Z]{3}(\s*-\s*[A-Z]{3})?)["\']?'
 
-    # Filter to only legal orders
+    try:
+        parsed = json.loads(raw.strip())
+        def _walk(x):
+            if isinstance(x, str) and re.match(order_pattern, x.strip()):
+                extracted_orders.append(x.strip())
+            elif isinstance(x, list):
+                for y in x: _walk(y)
+            elif isinstance(x, dict):
+                for k, v in x.items():
+                    _walk(k); _walk(v)
+        _walk(parsed)
+    except json.JSONDecodeError:
+        pass
+    if not extracted_orders:
+        array = re.search(r'\[(.*?)\]', raw, re.S)
+        if array:
+            try:
+                for itm in json.loads("[" + array.group(1) + "]"):
+                    if isinstance(itm, str) and re.match(order_pattern, itm.strip()):
+                        extracted_orders.append(itm.strip())
+            except json.JSONDecodeError:
+                pass
+    if not extracted_orders:
+        extracted_orders = [m[0].strip() for m in re.findall(order_pattern, raw)]
+
+    orders_raw = []
+    for o in extracted_orders:
+        o = re.sub(r'\s+', ' ', o.strip('"\' '))
+        if o not in orders_raw:
+            orders_raw.append(o)
+
     orders = filter_to_legal(game, power, orders_raw)
-    # print(f"[{power}] Filtered legal orders: {orders}")
-    
-    # Back-fill any missing or illegal orders with HOLD
+
     assigned = {o.split()[1] for o in orders}
-    
     for loc in locs:
         if loc not in assigned:
-            # Get first legal order to infer unit type (A or F)
-            example_order = all_opts[loc][0]
-            unit_type = example_order.split()[0]
+            unit_type = all_opts[loc][0].split()[0]
             orders.append(f"{unit_type} {loc} H")
-    
-    # Log
+
     DIALOGUE_LOG.append({
-        "phase": game.get_current_phase(),
+        "phase": phase,
         "power": power,
         "type": "orders",
         "prompt": prompt,
-        "response": output,
+        "response": raw,
         "orders": orders
     })
-    
     return orders
 
 
